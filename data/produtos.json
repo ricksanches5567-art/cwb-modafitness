@@ -1,0 +1,1384 @@
+[
+ {
+  "codigo": "YQ-1219",
+  "nome": "Macaquinho com zíper e debrum",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "vinho",
+   "preto",
+   "marrom",
+   "marinho"
+  ],
+  "fotos": [
+   "WA0050"
+  ],
+  "descricao": "Macaquinho com zíper e debrum em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1213",
+  "nome": "Macaquinho",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marrom"
+  ],
+  "fotos": [
+   "WA0095"
+  ],
+  "descricao": "Macaquinho em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1212",
+  "nome": "Macacão longo",
+  "categoria": "macacoes",
+  "preco": 99.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "vinho",
+   "preto",
+   "marinho",
+   "cinza",
+   "marrom"
+  ],
+  "fotos": [
+   "WA0118"
+  ],
+  "descricao": "Macacão longo em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1210",
+  "nome": "Macacão longo alça fina com debrum lateral",
+  "categoria": "macacoes",
+  "preco": 99.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marinho",
+   "preto"
+  ],
+  "fotos": [
+   "WA0060"
+  ],
+  "descricao": "Macacão longo alça fina com debrum lateral em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1209",
+  "nome": "Short com listras laterais",
+  "categoria": "leggings-shorts",
+  "preco": 49.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "preto",
+   "vinho",
+   "marrom",
+   "cinza"
+  ],
+  "fotos": [
+   "WA0106"
+  ],
+  "descricao": "Short com listras laterais em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1207",
+  "nome": "Macaquinho costas cruzadas com debrum",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "vinho",
+   "marrom",
+   "marinho",
+   "cinza",
+   "preto"
+  ],
+  "fotos": [
+   "WA0056"
+  ],
+  "descricao": "Macaquinho costas cruzadas com debrum em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1205",
+  "nome": "Macaquinho com debrum",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marinho"
+  ],
+  "fotos": [
+   "WA0066"
+  ],
+  "descricao": "Macaquinho com debrum em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1196",
+  "nome": "Macacão longo",
+  "categoria": "macacoes",
+  "preco": 99.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "vinho",
+   "cinza",
+   "marrom",
+   "marinho",
+   "preto"
+  ],
+  "fotos": [
+   "WA0062"
+  ],
+  "descricao": "Macacão longo em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1192",
+  "nome": "Macacão longo com debrum",
+  "categoria": "macacoes",
+  "preco": 99.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "preto",
+   "marrom",
+   "marinho",
+   "cinza",
+   "vinho"
+  ],
+  "fotos": [
+   "WA0076"
+  ],
+  "descricao": "Macacão longo com debrum em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1191",
+  "nome": "Macaquinho com debrum",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marinho",
+   "vinho",
+   "marrom",
+   "preto",
+   "cinza"
+  ],
+  "fotos": [
+   "WA0064"
+  ],
+  "descricao": "Macaquinho com debrum em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1190",
+  "nome": "Macacão longo com debrum",
+  "categoria": "macacoes",
+  "preco": 99.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "vinho",
+   "preto",
+   "marrom",
+   "cinza",
+   "marinho"
+  ],
+  "fotos": [
+   "WA0054"
+  ],
+  "descricao": "Macacão longo com debrum em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1189",
+  "nome": "Macaquinho com debrum",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marinho",
+   "marrom",
+   "preto",
+   "vinho",
+   "cinza"
+  ],
+  "fotos": [
+   "WA0085"
+  ],
+  "descricao": "Macaquinho com debrum em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1188",
+  "nome": "Conjunto top + legging",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "cinza",
+   "marrom",
+   "marinho",
+   "vinho",
+   "preto"
+  ],
+  "fotos": [
+   "WA0109"
+  ],
+  "descricao": "Conjunto top + legging em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1181",
+  "nome": "Macacão longo costas cruzadas",
+  "categoria": "macacoes",
+  "preco": 99.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "grafite"
+  ],
+  "fotos": [
+   "WA0038"
+  ],
+  "descricao": "Macacão longo costas cruzadas em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1180",
+  "nome": "Macaquinho costas trançadas",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marrom"
+  ],
+  "fotos": [
+   "WA0027"
+  ],
+  "descricao": "Macaquinho costas trançadas em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1179",
+  "nome": "Conjunto top + legging",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marrom",
+   "azul",
+   "cinza",
+   "vermelho",
+   "verde"
+  ],
+  "fotos": [
+   "WA0044"
+  ],
+  "descricao": "Conjunto top + legging em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1177",
+  "nome": "Macaquinho costas cruzadas",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "cinza"
+  ],
+  "fotos": [
+   "WA0036"
+  ],
+  "descricao": "Macaquinho costas cruzadas em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1174",
+  "nome": "Macacão longo costas vazadas",
+  "categoria": "macacoes",
+  "preco": 99.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "grafite"
+  ],
+  "fotos": [
+   "WA0029",
+   "WA0070"
+  ],
+  "descricao": "Macacão longo costas vazadas em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1169",
+  "nome": "Macaquinho costas cruzadas",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "azul royal"
+  ],
+  "fotos": [
+   "WA0035"
+  ],
+  "descricao": "Macaquinho costas cruzadas em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1167",
+  "nome": "Macaquinho um ombro",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "preto"
+  ],
+  "fotos": [
+   "WA0042"
+  ],
+  "descricao": "Macaquinho um ombro em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1166",
+  "nome": "Conjunto top costas cruzadas + legging",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "cinza"
+  ],
+  "fotos": [
+   "WA0098"
+  ],
+  "descricao": "Conjunto top costas cruzadas + legging em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1162",
+  "nome": "Macacão longo alça",
+  "categoria": "macacoes",
+  "preco": 99.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "preto",
+   "marrom",
+   "rosa",
+   "cinza",
+   "verde"
+  ],
+  "fotos": [
+   "WA0025"
+  ],
+  "descricao": "Macacão longo alça em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1159",
+  "nome": "Macaquinho costas vazadas",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marrom"
+  ],
+  "fotos": [
+   "WA0088"
+  ],
+  "descricao": "Macaquinho costas vazadas em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1156",
+  "nome": "Conjunto top um ombro + legging",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "preto"
+  ],
+  "fotos": [
+   "WA0032"
+  ],
+  "descricao": "Conjunto top um ombro + legging em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1155",
+  "nome": "Conjunto top um ombro + short / macaquinho",
+  "categoria": "conj-short",
+  "preco": 79.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "castanho",
+   "cinza",
+   "verde oliva",
+   "azul",
+   "preto"
+  ],
+  "fotos": [
+   "WA0071"
+  ],
+  "descricao": "Conjunto top um ombro + short / macaquinho em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1154",
+  "nome": "Conjunto top tiras + legging",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marrom",
+   "verde oliva"
+  ],
+  "fotos": [
+   "WA0039",
+   "WA0115"
+  ],
+  "descricao": "Conjunto top tiras + legging em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1151",
+  "nome": "Macacão longo com debrum",
+  "categoria": "macacoes",
+  "preco": 99.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "rosa terracota",
+   "preto",
+   "marrom",
+   "rosa",
+   "azul claro",
+   "cinza"
+  ],
+  "fotos": [
+   "WA0081"
+  ],
+  "descricao": "Macacão longo com debrum em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1150",
+  "nome": "Macaquinho",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "rosa terracota",
+   "rosa",
+   "azul claro",
+   "marrom",
+   "preto",
+   "cinza"
+  ],
+  "fotos": [
+   "WA0078"
+  ],
+  "descricao": "Macaquinho em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1140",
+  "nome": "Macaquinho um ombro",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "grafite"
+  ],
+  "fotos": [
+   "WA0026"
+  ],
+  "descricao": "Macaquinho um ombro em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1137",
+  "nome": "Macaquinho com zíper",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marrom"
+  ],
+  "fotos": [
+   "WA0092"
+  ],
+  "descricao": "Macaquinho com zíper em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1130",
+  "nome": "Macacão longo com zíper",
+  "categoria": "macacoes",
+  "preco": 99.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "grafite"
+  ],
+  "fotos": [
+   "WA0040"
+  ],
+  "descricao": "Macacão longo com zíper em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1129",
+  "nome": "Macaquinho com zíper",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "verde oliva"
+  ],
+  "fotos": [
+   "WA0034"
+  ],
+  "descricao": "Macaquinho com zíper em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1116",
+  "nome": "Conjunto top + legging",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "grafite"
+  ],
+  "fotos": [
+   "WA0107"
+  ],
+  "descricao": "Conjunto top + legging em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-1109",
+  "nome": "Macacão longo",
+  "categoria": "macacoes",
+  "preco": 99.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "azul petróleo"
+  ],
+  "fotos": [
+   "WA0030"
+  ],
+  "descricao": "Macacão longo em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-310",
+  "nome": "Legging tie-dye (empina)",
+  "categoria": "leggings-shorts",
+  "preco": 64.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "tie-dye cinza e preto",
+   "tie-dye rosa",
+   "tie-dye azul",
+   "tie-dye roxo"
+  ],
+  "fotos": [
+   "WA0037"
+  ],
+  "descricao": "Legging tie-dye (empina) em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Com efeito empina (franzido no bumbum), que valoriza as curvas. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-308",
+  "nome": "Conjunto cropped manga curta com zíper + short",
+  "categoria": "conj-short",
+  "preco": 79.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "azul royal"
+  ],
+  "fotos": [
+   "WA0100"
+  ],
+  "descricao": "Conjunto cropped manga curta com zíper + short em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-278",
+  "nome": "Conjunto top + legging com debrum",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "vinho"
+  ],
+  "fotos": [
+   "WA0119"
+  ],
+  "descricao": "Conjunto top + legging com debrum em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-268",
+  "nome": "Conjunto top + short com debrum",
+  "categoria": "conj-short",
+  "preco": 79.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marrom",
+   "vinho",
+   "marinho",
+   "preto",
+   "cinza"
+  ],
+  "fotos": [
+   "WA0057",
+   "WA0048"
+  ],
+  "descricao": "Conjunto top + short com debrum em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-265",
+  "nome": "Conjunto top + legging com debrum",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marrom",
+   "marinho",
+   "preto",
+   "vinho",
+   "cinza"
+  ],
+  "fotos": [
+   "WA0051",
+   "WA0045"
+  ],
+  "descricao": "Conjunto top + legging com debrum em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-263",
+  "nome": "Conjunto cropped manga curta + legging",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marinho",
+   "vinho",
+   "cinza",
+   "preto",
+   "marrom"
+  ],
+  "fotos": [
+   "WA0053"
+  ],
+  "descricao": "Conjunto cropped manga curta + legging em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-262",
+  "nome": "Conjunto cropped manga curta + short",
+  "categoria": "conj-short",
+  "preco": 79.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marinho",
+   "cinza",
+   "preto",
+   "marrom",
+   "vinho"
+  ],
+  "fotos": [
+   "WA0072"
+  ],
+  "descricao": "Conjunto cropped manga curta + short em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-261",
+  "nome": "Conjunto top + legging",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marinho",
+   "vinho",
+   "cinza",
+   "preto",
+   "marrom"
+  ],
+  "fotos": [
+   "WA0079"
+  ],
+  "descricao": "Conjunto top + legging em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-260",
+  "nome": "Conjunto top + short",
+  "categoria": "conj-short",
+  "preco": 79.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "vinho",
+   "marinho",
+   "preto",
+   "marrom",
+   "cinza"
+  ],
+  "fotos": [
+   "WA0058"
+  ],
+  "descricao": "Conjunto top + short em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-257",
+  "nome": "Macacão longo manga curta",
+  "categoria": "macacoes",
+  "preco": 99.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "vinho",
+   "marinho",
+   "preto",
+   "marrom"
+  ],
+  "fotos": [
+   "WA0067"
+  ],
+  "descricao": "Macacão longo manga curta em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-256",
+  "nome": "Macaquinho manga curta com debrum",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marinho",
+   "preto",
+   "vinho",
+   "cinza",
+   "marrom"
+  ],
+  "fotos": [
+   "WA0101"
+  ],
+  "descricao": "Macaquinho manga curta com debrum em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-255",
+  "nome": "Conjunto top + legging",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marinho",
+   "rosa",
+   "vinho",
+   "marrom",
+   "azul claro"
+  ],
+  "fotos": [
+   "WA0077"
+  ],
+  "descricao": "Conjunto top + legging em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-254",
+  "nome": "Conjunto top + short",
+  "categoria": "conj-short",
+  "preco": 79.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marinho",
+   "rosa",
+   "vinho",
+   "marrom",
+   "azul claro"
+  ],
+  "fotos": [
+   "WA0111"
+  ],
+  "descricao": "Conjunto top + short em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-251",
+  "nome": "Conjunto regata com debrum + legging",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marrom",
+   "vinho",
+   "marinho",
+   "cinza",
+   "preto"
+  ],
+  "fotos": [
+   "WA0049"
+  ],
+  "descricao": "Conjunto regata com debrum + legging em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-249",
+  "nome": "Conjunto top + legging com debrum",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "grafite",
+   "rosa",
+   "azul claro",
+   "vinho",
+   "preto",
+   "marinho"
+  ],
+  "fotos": [
+   "WA0083"
+  ],
+  "descricao": "Conjunto top + legging com debrum em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-248",
+  "nome": "Conjunto top + short com debrum",
+  "categoria": "conj-short",
+  "preco": 79.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "cinza",
+   "rosa",
+   "azul claro",
+   "vinho",
+   "preto",
+   "marinho"
+  ],
+  "fotos": [
+   "WA0068"
+  ],
+  "descricao": "Conjunto top + short com debrum em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-243",
+  "nome": "Macacão longo com faixa branca",
+  "categoria": "macacoes",
+  "preco": 99.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "vinho"
+  ],
+  "fotos": [
+   "WA0108"
+  ],
+  "descricao": "Macacão longo com faixa branca em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-242",
+  "nome": "Macaquinho com faixa branca",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "vinho"
+  ],
+  "fotos": [
+   "WA0061"
+  ],
+  "descricao": "Macaquinho com faixa branca em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-237",
+  "nome": "Conjunto top + legging",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "azul claro"
+  ],
+  "fotos": [
+   "WA0086",
+   "WA0084"
+  ],
+  "descricao": "Conjunto top + legging em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-236",
+  "nome": "Conjunto top + short com debrum",
+  "categoria": "conj-short",
+  "preco": 79.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "rosa terracota"
+  ],
+  "fotos": [
+   "WA0082",
+   "WA0080"
+  ],
+  "descricao": "Conjunto top + short com debrum em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-232",
+  "nome": "Conjunto top + legging",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marrom",
+   "preto"
+  ],
+  "fotos": [
+   "WA0031"
+  ],
+  "descricao": "Conjunto top + legging em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-228",
+  "nome": "Macacão flare sem manga",
+  "categoria": "flare",
+  "preco": 99.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marrom",
+   "taupe"
+  ],
+  "fotos": [
+   "WA0074",
+   "WA0075"
+  ],
+  "descricao": "Macacão flare sem manga em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-227",
+  "nome": "Calça flare",
+  "categoria": "flare",
+  "preco": 89.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "vinho",
+   "marinho",
+   "preto",
+   "cinza",
+   "marrom"
+  ],
+  "fotos": [
+   "WA0055"
+  ],
+  "descricao": "Calça flare em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-226",
+  "nome": "Macaquinho costas vazadas",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "cinza"
+  ],
+  "fotos": [
+   "WA0063"
+  ],
+  "descricao": "Macaquinho costas vazadas em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-225",
+  "nome": "Conjunto top + legging",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "azul royal"
+  ],
+  "fotos": [
+   "WA0112"
+  ],
+  "descricao": "Conjunto top + legging em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-224",
+  "nome": "Conjunto top tiras + short",
+  "categoria": "conj-short",
+  "preco": 79.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marrom"
+  ],
+  "fotos": [
+   "WA0116"
+  ],
+  "descricao": "Conjunto top tiras + short em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-223",
+  "nome": "Conjunto top tiras + legging",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "azul royal"
+  ],
+  "fotos": [
+   "WA0033"
+  ],
+  "descricao": "Conjunto top tiras + legging em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-222",
+  "nome": "Conjunto top tiras + short",
+  "categoria": "conj-short",
+  "preco": 79.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marrom",
+   "preto"
+  ],
+  "fotos": [
+   "WA0041",
+   "WA0114"
+  ],
+  "descricao": "Conjunto top tiras + short em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-221",
+  "nome": "Macacão longo com zíper",
+  "categoria": "macacoes",
+  "preco": 99.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "verde oliva"
+  ],
+  "fotos": [
+   "WA0065"
+  ],
+  "descricao": "Macacão longo com zíper em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-219",
+  "nome": "Macacão longo listras na perna",
+  "categoria": "macacoes",
+  "preco": 99.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "azul royal"
+  ],
+  "fotos": [
+   "WA0028"
+  ],
+  "descricao": "Macacão longo listras na perna em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-218",
+  "nome": "Macaquinho listras na perna",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "verde sálvia"
+  ],
+  "fotos": [
+   "WA0043"
+  ],
+  "descricao": "Macaquinho listras na perna em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-215",
+  "nome": "Conjunto top recortado + legging",
+  "categoria": "conj-legging",
+  "preco": 94.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "terracota",
+   "azul",
+   "verde oliva",
+   "cinza",
+   "preto"
+  ],
+  "fotos": [
+   "WA0087"
+  ],
+  "descricao": "Conjunto top recortado + legging em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-164",
+  "nome": "Conjunto top + short",
+  "categoria": "conj-short",
+  "preco": 79.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "verde oliva"
+  ],
+  "fotos": [
+   "WA0117"
+  ],
+  "descricao": "Conjunto top + short em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "YQ-28",
+  "nome": "Macaquinho com debrum",
+  "categoria": "macaquinhos",
+  "preco": 74.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "marinho",
+   "vinho",
+   "cinza",
+   "marrom"
+  ],
+  "fotos": [
+   "WA0047"
+  ],
+  "descricao": "Macaquinho com debrum em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ },
+ {
+  "codigo": "Tj-027",
+  "nome": "Conjunto top + short com listras",
+  "categoria": "conj-short",
+  "preco": 79.9,
+  "tamanhos": [
+   "P",
+   "M",
+   "G"
+  ],
+  "cores": [
+   "cinza"
+  ],
+  "fotos": [
+   "WA0073"
+  ],
+  "descricao": "Conjunto top + short com listras em poliamida canelada: tecido macio, encorpado e que não marca o corpo. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
+ }
+]
