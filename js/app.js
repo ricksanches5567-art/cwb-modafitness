@@ -203,7 +203,7 @@
   function closeProduct(fromHistory) {
     var m = $('#productModal'); if (m.hidden) return;
     m.hidden = true; document.body.classList.remove('lock');
-    document.title = 'CWB Moda Fitness | Moda fitness em poliamida canelada – Curitiba';
+    document.title = 'CWB Moda Fitness | Moda fitness – Curitiba';
     if (!fromHistory && location.hash.indexOf('#p/') === 0) {
       if (openedByClick) history.back(); else history.replaceState(null, '', location.pathname + location.search);
     }
