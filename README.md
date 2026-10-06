@@ -29,3 +29,19 @@ listadas em `BLUR`).
 python3 -m http.server 8000
 ```
 e abra http://localhost:8000
+
+## Frete (estimativa pelo CEP)
+- Em `config.js`: `freteTabela` (PAC e SEDEX por região, origem Curitiba, pacote de até 1 kg),
+  `freteGratisAcima` (frete grátis PAC a partir desse subtotal; 0 desliga), `fretePesoPecaKg`, `freteEmbalagemKg`.
+- A cidade/UF vem da ViaCEP (reserva: BrasilAPI). Se as duas falharem, a região é estimada pela faixa do CEP.
+- O valor é sempre uma estimativa: o pedido no WhatsApp leva CEP, cidade/UF, modalidade, frete e total.
+
+## Vídeos e fotos do visual
+- `video/hero-*.mp4|webm` (abertura, 9:16 celular / 16:9 computador) e `video/detail-*` (seção Detalhes),
+  feitos com ffmpeg a partir das fotos reais das peças (sem IA). Pôsteres: `video/*-poster.webp`.
+- `img/film/cap-*.webp`: fotos reais da seção Coleção (animadas no canvas). `img/ed/*.webp`: recortes editoriais.
+- Movimento: GSAP + ScrollTrigger + Lenis em `js/vendor/` (locais), lógica em `js/motion.js`.
+  Com "reduzir movimento" ligado no celular, tudo fica estático.
+
+## Verificação
+`NODE_PATH=<pasta com puppeteer-core>/node_modules node scripts/verify_site.js http://127.0.0.1:8765/cwb-modafitness/ <pasta_prints>`

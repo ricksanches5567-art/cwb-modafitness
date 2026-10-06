@@ -25,7 +25,7 @@ def categoria(nome):
     return 'leggings-shorts'
 
 def descricao(nome, cat, empina):
-    d = [f"{nome} em poliamida canelada: tecido macio, encorpado e que não marca o corpo."]
+    d = [f"{nome} em poliamida."]
     if empina == 'sim':
         d.append("Com efeito empina (franzido no bumbum), que valoriza as curvas.")
     elif empina == 'nao':
