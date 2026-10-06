@@ -48,7 +48,7 @@ def render(cfg, out, preview=None):
         sheet = Image.new('RGB', (tw * len(frames), th), 'white')
         for i, f in enumerate(frames): sheet.paste(f.resize((tw, th)), (i * tw, 0))
         sheet.save(preview); return
-    grade = cfg.get('grade', 'eq=contrast=1.05:saturation=0.9:gamma=0.98,colorbalance=rs=0.03:gs=0.008:bs=-0.03:rh=0.03:gh=0.01:bh=-0.035,vignette=PI/5')
+    grade = cfg.get('grade', 'eq=contrast=1.05:saturation=0.9:gamma=0.98,colorbalance=rs=0.035:gs=-0.015:bs=0.03:rh=0.02:bh=-0.01,vignette=PI/5')
     cmd = ['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(fps), '-i', '-',
            '-vf', grade + ',format=yuv420p', '-c:v', 'libx264', '-preset', 'slow', '-crf', str(cfg.get('crf', 26)),
            '-profile:v', 'high', '-movflags', '+faststart', '-an', out]

@@ -43,9 +43,8 @@ e abra http://localhost:8000
 - O CPF fica só na sessão do navegador (não é salvo no aparelho).
 
 ## Logo e cores
-- Logo do Instagram redesenhado em vetor: `img/logo.svg` (fundo laranja), `img/logo-transparent.svg`, `favicon.svg`
-  e o símbolo `#logo-full` / `#logo-fig` dentro do `index.html`. Paleta em `css/style.css` (`:root`): laranja
-  `#f09f36`, degradê rosa→coral→laranja→amarelo do logo, preto quente e creme.
+- Marca do site: símbolo `#logo-mark` (círculo com "cwb" em Fraunces itálico) no `index.html` e `favicon.svg`.
+  Paleta em `css/style.css` (`:root`): ameixa escuro, dourado e rosé; fontes Fraunces + Manrope.
 
 ## Vídeos e fotos do visual
 - `video/hero-*.mp4|webm` (abertura, 9:16 celular / 16:9 computador) e `video/detail-*` (seção Detalhes),
