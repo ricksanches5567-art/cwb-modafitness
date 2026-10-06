@@ -16,7 +16,22 @@
    "marinho"
   ],
   "fotos": [
-   "WA0050"
+   "YQ-1219-1",
+   "YQ-1219-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1219-1",
+    "w": 532,
+    "h": 1200,
+    "rotulo": "modelo"
+   },
+   {
+    "id": "YQ-1219-2",
+    "w": 717,
+    "h": 1200,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Macaquinho com zíper e debrum em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -34,7 +49,15 @@
    "marrom"
   ],
   "fotos": [
-   "WA0095"
+   "YQ-1213-1"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1213-1",
+    "w": 896,
+    "h": 1058,
+    "rotulo": "lateral"
+   }
   ],
   "descricao": "Macaquinho em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -56,7 +79,29 @@
    "marrom"
   ],
   "fotos": [
-   "WA0118"
+   "YQ-1212-1",
+   "YQ-1212-2",
+   "YQ-1212-3"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1212-1",
+    "w": 502,
+    "h": 761,
+    "rotulo": "modelo"
+   },
+   {
+    "id": "YQ-1212-2",
+    "w": 406,
+    "h": 564,
+    "rotulo": "cores na arara"
+   },
+   {
+    "id": "YQ-1212-3",
+    "w": 287,
+    "h": 600,
+    "rotulo": "outra cor"
+   }
   ],
   "descricao": "Macacão longo em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -75,7 +120,15 @@
    "preto"
   ],
   "fotos": [
-   "WA0060"
+   "YQ-1210-1"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1210-1",
+    "w": 591,
+    "h": 1195,
+    "rotulo": "frente"
+   }
   ],
   "descricao": "Macacão longo alça fina com debrum lateral em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -96,7 +149,15 @@
    "cinza"
   ],
   "fotos": [
-   "WA0106"
+   "YQ-1209-1"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1209-1",
+    "w": 896,
+    "h": 1028,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Short com listras laterais em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -118,7 +179,29 @@
    "preto"
   ],
   "fotos": [
-   "WA0056"
+   "YQ-1207-1",
+   "YQ-1207-2",
+   "YQ-1207-3"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1207-1",
+    "w": 679,
+    "h": 1200,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-1207-2",
+    "w": 792,
+    "h": 792,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-1207-3",
+    "w": 792,
+    "h": 749,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Macaquinho costas cruzadas com debrum em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -136,7 +219,43 @@
    "marinho"
   ],
   "fotos": [
-   "WA0066"
+   "YQ-1205-1",
+   "YQ-1205-2",
+   "YQ-1205-3",
+   "YQ-1205-4",
+   "YQ-1205-5"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1205-1",
+    "w": 924,
+    "h": 1200,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-1205-2",
+    "w": 494,
+    "h": 792,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-1205-3",
+    "w": 430,
+    "h": 851,
+    "rotulo": "frente (vinho)"
+   },
+   {
+    "id": "YQ-1205-4",
+    "w": 621,
+    "h": 600,
+    "rotulo": "cores na arara"
+   },
+   {
+    "id": "YQ-1205-5",
+    "w": 494,
+    "h": 792,
+    "rotulo": "tecido"
+   }
   ],
   "descricao": "Macaquinho com debrum em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -158,7 +277,22 @@
    "preto"
   ],
   "fotos": [
-   "WA0062"
+   "YQ-1196-1",
+   "YQ-1196-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1196-1",
+    "w": 538,
+    "h": 851,
+    "rotulo": "lateral"
+   },
+   {
+    "id": "YQ-1196-2",
+    "w": 561,
+    "h": 574,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Macacão longo em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -180,7 +314,22 @@
    "vinho"
   ],
   "fotos": [
-   "WA0076"
+   "YQ-1192-1",
+   "YQ-1192-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1192-1",
+    "w": 693,
+    "h": 780,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-1192-2",
+    "w": 454,
+    "h": 493,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Macacão longo com debrum em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -202,7 +351,29 @@
    "cinza"
   ],
   "fotos": [
-   "WA0064"
+   "YQ-1191-1",
+   "YQ-1191-2",
+   "YQ-1191-3"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1191-1",
+    "w": 598,
+    "h": 797,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-1191-2",
+    "w": 478,
+    "h": 421,
+    "rotulo": "cores na arara"
+   },
+   {
+    "id": "YQ-1191-3",
+    "w": 382,
+    "h": 690,
+    "rotulo": "costas (espelho)"
+   }
   ],
   "descricao": "Macaquinho com debrum em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -224,7 +395,22 @@
    "marinho"
   ],
   "fotos": [
-   "WA0054"
+   "YQ-1190-1",
+   "YQ-1190-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1190-1",
+    "w": 502,
+    "h": 1190,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-1190-2",
+    "w": 493,
+    "h": 963,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Macacão longo com debrum em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -246,7 +432,22 @@
    "cinza"
   ],
   "fotos": [
-   "WA0085"
+   "YQ-1189-1",
+   "YQ-1189-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1189-1",
+    "w": 627,
+    "h": 1023,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-1189-2",
+    "w": 430,
+    "h": 750,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Macaquinho com debrum em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -268,7 +469,15 @@
    "preto"
   ],
   "fotos": [
-   "WA0109"
+   "YQ-1188-1"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1188-1",
+    "w": 645,
+    "h": 1028,
+    "rotulo": "frente"
+   }
   ],
   "descricao": "Conjunto top + legging em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -286,7 +495,22 @@
    "grafite"
   ],
   "fotos": [
-   "WA0038"
+   "YQ-1181-1",
+   "YQ-1181-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1181-1",
+    "w": 866,
+    "h": 1200,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-1181-2",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Macacão longo costas cruzadas em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -304,7 +528,22 @@
    "marrom"
   ],
   "fotos": [
-   "WA0027"
+   "YQ-1180-1",
+   "YQ-1180-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1180-1",
+    "w": 897,
+    "h": 1200,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-1180-2",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Macaquinho costas trançadas em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -326,7 +565,29 @@
    "verde"
   ],
   "fotos": [
-   "WA0044"
+   "YQ-1179-1",
+   "YQ-1179-2",
+   "YQ-1179-3"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1179-1",
+    "w": 773,
+    "h": 1200,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-1179-2",
+    "w": 553,
+    "h": 792,
+    "rotulo": "detalhe"
+   },
+   {
+    "id": "YQ-1179-3",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Conjunto top + legging em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -344,7 +605,22 @@
    "cinza"
   ],
   "fotos": [
-   "WA0036"
+   "YQ-1177-1",
+   "YQ-1177-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1177-1",
+    "w": 892,
+    "h": 1200,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-1177-2",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Macaquinho costas cruzadas em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -362,8 +638,29 @@
    "grafite"
   ],
   "fotos": [
-   "WA0029",
-   "WA0070"
+   "YQ-1174-1",
+   "YQ-1174-2",
+   "YQ-1174-3"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1174-1",
+    "w": 836,
+    "h": 1200,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-1174-2",
+    "w": 842,
+    "h": 1200,
+    "rotulo": "costas (outra foto)"
+   },
+   {
+    "id": "YQ-1174-3",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Macacão longo costas vazadas em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -381,7 +678,22 @@
    "azul royal"
   ],
   "fotos": [
-   "WA0035"
+   "YQ-1169-1",
+   "YQ-1169-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1169-1",
+    "w": 854,
+    "h": 1200,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-1169-2",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Macaquinho costas cruzadas em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -399,7 +711,22 @@
    "preto"
   ],
   "fotos": [
-   "WA0042"
+   "YQ-1167-1",
+   "YQ-1167-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1167-1",
+    "w": 906,
+    "h": 1200,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-1167-2",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Macaquinho um ombro em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -417,7 +744,22 @@
    "cinza"
   ],
   "fotos": [
-   "WA0098"
+   "YQ-1166-1",
+   "YQ-1166-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1166-1",
+    "w": 896,
+    "h": 1017,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-1166-2",
+    "w": 896,
+    "h": 1190,
+    "rotulo": "frente"
+   }
   ],
   "descricao": "Conjunto top costas cruzadas + legging em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -439,7 +781,22 @@
    "verde"
   ],
   "fotos": [
-   "WA0025"
+   "YQ-1162-1",
+   "YQ-1162-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1162-1",
+    "w": 606,
+    "h": 1200,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-1162-2",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "detalhe e cores"
+   }
   ],
   "descricao": "Macacão longo alça em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -457,7 +814,15 @@
    "marrom"
   ],
   "fotos": [
-   "WA0088"
+   "YQ-1159-1"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1159-1",
+    "w": 896,
+    "h": 1023,
+    "rotulo": "costas"
+   }
   ],
   "descricao": "Macaquinho costas vazadas em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -475,7 +840,22 @@
    "preto"
   ],
   "fotos": [
-   "WA0032"
+   "YQ-1156-1",
+   "YQ-1156-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1156-1",
+    "w": 831,
+    "h": 1200,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-1156-2",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Conjunto top um ombro + legging em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -497,7 +877,22 @@
    "preto"
   ],
   "fotos": [
-   "WA0071"
+   "YQ-1155-1",
+   "YQ-1155-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1155-1",
+    "w": 605,
+    "h": 1127,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-1155-2",
+    "w": 363,
+    "h": 1065,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Conjunto top um ombro + short / macaquinho em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -516,8 +911,36 @@
    "verde oliva"
   ],
   "fotos": [
-   "WA0039",
-   "WA0115"
+   "YQ-1154-1",
+   "YQ-1154-2",
+   "YQ-1154-3",
+   "YQ-1154-4"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1154-1",
+    "w": 836,
+    "h": 1200,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-1154-2",
+    "w": 606,
+    "h": 1200,
+    "rotulo": "frente (verde oliva)"
+   },
+   {
+    "id": "YQ-1154-3",
+    "w": 594,
+    "h": 1200,
+    "rotulo": "costas (verde oliva)"
+   },
+   {
+    "id": "YQ-1154-4",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Conjunto top tiras + legging em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -540,7 +963,22 @@
    "cinza"
   ],
   "fotos": [
-   "WA0081"
+   "YQ-1151-1",
+   "YQ-1151-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1151-1",
+    "w": 526,
+    "h": 869,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-1151-2",
+    "w": 609,
+    "h": 645,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Macacão longo com debrum em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -563,7 +1001,22 @@
    "cinza"
   ],
   "fotos": [
-   "WA0078"
+   "YQ-1150-1",
+   "YQ-1150-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1150-1",
+    "w": 550,
+    "h": 815,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-1150-2",
+    "w": 621,
+    "h": 636,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Macaquinho em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -581,7 +1034,22 @@
    "grafite"
   ],
   "fotos": [
-   "WA0026"
+   "YQ-1140-1",
+   "YQ-1140-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1140-1",
+    "w": 865,
+    "h": 1200,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-1140-2",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Macaquinho um ombro em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -599,7 +1067,22 @@
    "marrom"
   ],
   "fotos": [
-   "WA0092"
+   "YQ-1137-1",
+   "YQ-1137-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1137-1",
+    "w": 896,
+    "h": 1023,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-1137-2",
+    "w": 896,
+    "h": 1190,
+    "rotulo": "costas"
+   }
   ],
   "descricao": "Macaquinho com zíper em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -617,7 +1100,22 @@
    "grafite"
   ],
   "fotos": [
-   "WA0040"
+   "YQ-1130-1",
+   "YQ-1130-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1130-1",
+    "w": 887,
+    "h": 1200,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-1130-2",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Macacão longo com zíper em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -635,7 +1133,22 @@
    "verde oliva"
   ],
   "fotos": [
-   "WA0034"
+   "YQ-1129-1",
+   "YQ-1129-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1129-1",
+    "w": 933,
+    "h": 1200,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-1129-2",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Macaquinho com zíper em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -653,7 +1166,22 @@
    "grafite"
   ],
   "fotos": [
-   "WA0107"
+   "YQ-1116-1",
+   "YQ-1116-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1116-1",
+    "w": 625,
+    "h": 1200,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-1116-2",
+    "w": 563,
+    "h": 1200,
+    "rotulo": "costas"
+   }
   ],
   "descricao": "Conjunto top + legging em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -671,7 +1199,22 @@
    "azul petróleo"
   ],
   "fotos": [
-   "WA0030"
+   "YQ-1109-1",
+   "YQ-1109-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-1109-1",
+    "w": 879,
+    "h": 1200,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-1109-2",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Macacão longo em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -692,7 +1235,15 @@
    "tie-dye roxo"
   ],
   "fotos": [
-   "WA0037"
+   "YQ-310-1"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-310-1",
+    "w": 1031,
+    "h": 1200,
+    "rotulo": "costas e cores"
+   }
   ],
   "descricao": "Legging tie-dye (empina) em poliamida. Com efeito empina (franzido no bumbum), que valoriza as curvas. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -710,7 +1261,15 @@
    "azul royal"
   ],
   "fotos": [
-   "WA0100"
+   "YQ-308-1"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-308-1",
+    "w": 896,
+    "h": 1023,
+    "rotulo": "frente"
+   }
   ],
   "descricao": "Conjunto cropped manga curta com zíper + short em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -728,7 +1287,15 @@
    "vinho"
   ],
   "fotos": [
-   "WA0119"
+   "YQ-278-1"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-278-1",
+    "w": 896,
+    "h": 1041,
+    "rotulo": "frente"
+   }
   ],
   "descricao": "Conjunto top + legging com debrum em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -750,8 +1317,22 @@
    "cinza"
   ],
   "fotos": [
-   "WA0057",
-   "WA0048"
+   "YQ-268-1",
+   "YQ-268-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-268-1",
+    "w": 727,
+    "h": 755,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-268-2",
+    "w": 976,
+    "h": 679,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Conjunto top + short com debrum em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -773,8 +1354,22 @@
    "cinza"
   ],
   "fotos": [
-   "WA0051",
-   "WA0045"
+   "YQ-265-1",
+   "YQ-265-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-265-1",
+    "w": 956,
+    "h": 744,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-265-2",
+    "w": 908,
+    "h": 717,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Conjunto top + legging com debrum em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -796,7 +1391,22 @@
    "marrom"
   ],
   "fotos": [
-   "WA0053"
+   "YQ-263-1",
+   "YQ-263-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-263-1",
+    "w": 487,
+    "h": 514,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-263-2",
+    "w": 609,
+    "h": 458,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Conjunto cropped manga curta + legging em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -818,7 +1428,22 @@
    "vinho"
   ],
   "fotos": [
-   "WA0072"
+   "YQ-262-1",
+   "YQ-262-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-262-1",
+    "w": 414,
+    "h": 531,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-262-2",
+    "w": 608,
+    "h": 354,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Conjunto cropped manga curta + short em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -840,7 +1465,29 @@
    "marrom"
   ],
   "fotos": [
-   "WA0079"
+   "YQ-261-1",
+   "YQ-261-2",
+   "YQ-261-3"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-261-1",
+    "w": 1097,
+    "h": 629,
+    "rotulo": "cores"
+   },
+   {
+    "id": "YQ-261-2",
+    "w": 483,
+    "h": 629,
+    "rotulo": "marinho e vinho"
+   },
+   {
+    "id": "YQ-261-3",
+    "w": 658,
+    "h": 629,
+    "rotulo": "cinza, preto e marrom"
+   }
   ],
   "descricao": "Conjunto top + legging em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -862,7 +1509,22 @@
    "cinza"
   ],
   "fotos": [
-   "WA0058"
+   "YQ-260-1",
+   "YQ-260-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-260-1",
+    "w": 565,
+    "h": 795,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-260-2",
+    "w": 577,
+    "h": 553,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Conjunto top + short em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -883,7 +1545,29 @@
    "marrom"
   ],
   "fotos": [
-   "WA0067"
+   "YQ-257-1",
+   "YQ-257-2",
+   "YQ-257-3"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-257-1",
+    "w": 378,
+    "h": 822,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-257-2",
+    "w": 300,
+    "h": 840,
+    "rotulo": "lateral"
+   },
+   {
+    "id": "YQ-257-3",
+    "w": 445,
+    "h": 632,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Macacão longo manga curta em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -905,7 +1589,29 @@
    "marrom"
   ],
   "fotos": [
-   "WA0101"
+   "YQ-256-1",
+   "YQ-256-2",
+   "YQ-256-3"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-256-1",
+    "w": 478,
+    "h": 797,
+    "rotulo": "frente (marinho)"
+   },
+   {
+    "id": "YQ-256-2",
+    "w": 406,
+    "h": 797,
+    "rotulo": "costas (preto)"
+   },
+   {
+    "id": "YQ-256-3",
+    "w": 502,
+    "h": 422,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Macaquinho manga curta com debrum em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -927,7 +1633,22 @@
    "azul claro"
   ],
   "fotos": [
-   "WA0077"
+   "YQ-255-1",
+   "YQ-255-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-255-1",
+    "w": 566,
+    "h": 826,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-255-2",
+    "w": 465,
+    "h": 696,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Conjunto top + legging em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -949,7 +1670,22 @@
    "azul claro"
   ],
   "fotos": [
-   "WA0111"
+   "YQ-254-1",
+   "YQ-254-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-254-1",
+    "w": 574,
+    "h": 713,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-254-2",
+    "w": 574,
+    "h": 416,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Conjunto top + short em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -971,7 +1707,22 @@
    "preto"
   ],
   "fotos": [
-   "WA0049"
+   "YQ-251-1",
+   "YQ-251-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-251-1",
+    "w": 598,
+    "h": 1200,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-251-2",
+    "w": 718,
+    "h": 1200,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Conjunto regata com debrum + legging em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -994,7 +1745,22 @@
    "marinho"
   ],
   "fotos": [
-   "WA0083"
+   "YQ-249-1",
+   "YQ-249-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-249-1",
+    "w": 598,
+    "h": 833,
+    "rotulo": "frente e costas"
+   },
+   {
+    "id": "YQ-249-2",
+    "w": 597,
+    "h": 726,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Conjunto top + legging com debrum em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1017,7 +1783,22 @@
    "marinho"
   ],
   "fotos": [
-   "WA0068"
+   "YQ-248-1",
+   "YQ-248-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-248-1",
+    "w": 598,
+    "h": 833,
+    "rotulo": "frente e costas"
+   },
+   {
+    "id": "YQ-248-2",
+    "w": 597,
+    "h": 600,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Conjunto top + short com debrum em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1035,7 +1816,22 @@
    "vinho"
   ],
   "fotos": [
-   "WA0108"
+   "YQ-243-1",
+   "YQ-243-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-243-1",
+    "w": 598,
+    "h": 735,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-243-2",
+    "w": 597,
+    "h": 735,
+    "rotulo": "costas"
+   }
   ],
   "descricao": "Macacão longo com faixa branca em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1053,7 +1849,29 @@
    "vinho"
   ],
   "fotos": [
-   "WA0061"
+   "YQ-242-1",
+   "YQ-242-2",
+   "YQ-242-3"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-242-1",
+    "w": 869,
+    "h": 1200,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-242-2",
+    "w": 553,
+    "h": 986,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-242-3",
+    "w": 553,
+    "h": 597,
+    "rotulo": "tecido"
+   }
   ],
   "descricao": "Macaquinho com faixa branca em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1071,8 +1889,22 @@
    "azul claro"
   ],
   "fotos": [
-   "WA0086",
-   "WA0084"
+   "YQ-237-1",
+   "YQ-237-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-237-1",
+    "w": 609,
+    "h": 1190,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-237-2",
+    "w": 896,
+    "h": 1190,
+    "rotulo": "costas"
+   }
   ],
   "descricao": "Conjunto top + legging em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1090,8 +1922,22 @@
    "rosa terracota"
   ],
   "fotos": [
-   "WA0082",
-   "WA0080"
+   "YQ-236-1",
+   "YQ-236-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-236-1",
+    "w": 896,
+    "h": 1017,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-236-2",
+    "w": 896,
+    "h": 1190,
+    "rotulo": "costas"
+   }
   ],
   "descricao": "Conjunto top + short com debrum em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1110,7 +1956,22 @@
    "preto"
   ],
   "fotos": [
-   "WA0031"
+   "YQ-232-1",
+   "YQ-232-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-232-1",
+    "w": 856,
+    "h": 1200,
+    "rotulo": "frente e costas"
+   },
+   {
+    "id": "YQ-232-2",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Conjunto top + legging em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1129,8 +1990,22 @@
    "taupe"
   ],
   "fotos": [
-   "WA0074",
-   "WA0075"
+   "YQ-228-1",
+   "YQ-228-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-228-1",
+    "w": 1024,
+    "h": 891,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-228-2",
+    "w": 1080,
+    "h": 1080,
+    "rotulo": "frente (taupe)"
+   }
   ],
   "descricao": "Macacão flare sem manga em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1152,7 +2027,15 @@
    "marrom"
   ],
   "fotos": [
-   "WA0055"
+   "YQ-227-1"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-227-1",
+    "w": 671,
+    "h": 791,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Calça flare em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1170,7 +2053,29 @@
    "cinza"
   ],
   "fotos": [
-   "WA0063"
+   "YQ-226-1",
+   "YQ-226-2",
+   "YQ-226-3"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-226-1",
+    "w": 951,
+    "h": 1200,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-226-2",
+    "w": 456,
+    "h": 792,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-226-3",
+    "w": 456,
+    "h": 792,
+    "rotulo": "tecido"
+   }
   ],
   "descricao": "Macaquinho costas vazadas em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1188,7 +2093,22 @@
    "azul royal"
   ],
   "fotos": [
-   "WA0112"
+   "YQ-225-1",
+   "YQ-225-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-225-1",
+    "w": 594,
+    "h": 1200,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-225-2",
+    "w": 594,
+    "h": 1200,
+    "rotulo": "costas"
+   }
   ],
   "descricao": "Conjunto top + legging em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1206,7 +2126,22 @@
    "marrom"
   ],
   "fotos": [
-   "WA0116"
+   "YQ-224-1",
+   "YQ-224-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-224-1",
+    "w": 594,
+    "h": 1200,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-224-2",
+    "w": 594,
+    "h": 1200,
+    "rotulo": "costas"
+   }
   ],
   "descricao": "Conjunto top tiras + short em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1224,7 +2159,22 @@
    "azul royal"
   ],
   "fotos": [
-   "WA0033"
+   "YQ-223-1",
+   "YQ-223-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-223-1",
+    "w": 903,
+    "h": 1200,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-223-2",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Conjunto top tiras + legging em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1243,8 +2193,36 @@
    "preto"
   ],
   "fotos": [
-   "WA0041",
-   "WA0114"
+   "YQ-222-1",
+   "YQ-222-2",
+   "YQ-222-3",
+   "YQ-222-4"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-222-1",
+    "w": 902,
+    "h": 1200,
+    "rotulo": "costas (marrom)"
+   },
+   {
+    "id": "YQ-222-2",
+    "w": 594,
+    "h": 1200,
+    "rotulo": "frente (preto)"
+   },
+   {
+    "id": "YQ-222-3",
+    "w": 594,
+    "h": 1200,
+    "rotulo": "costas (preto)"
+   },
+   {
+    "id": "YQ-222-4",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Conjunto top tiras + short em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1262,7 +2240,29 @@
    "verde oliva"
   ],
   "fotos": [
-   "WA0065"
+   "YQ-221-1",
+   "YQ-221-2",
+   "YQ-221-3"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-221-1",
+    "w": 986,
+    "h": 1200,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-221-2",
+    "w": 414,
+    "h": 792,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-221-3",
+    "w": 414,
+    "h": 600,
+    "rotulo": "tecido"
+   }
   ],
   "descricao": "Macacão longo com zíper em poliamida. Modelo sem empina (sem franzido no bumbum). Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1280,7 +2280,22 @@
    "azul royal"
   ],
   "fotos": [
-   "WA0028"
+   "YQ-219-1",
+   "YQ-219-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-219-1",
+    "w": 843,
+    "h": 1200,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-219-2",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Macacão longo listras na perna em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1298,7 +2313,22 @@
    "verde sálvia"
   ],
   "fotos": [
-   "WA0043"
+   "YQ-218-1",
+   "YQ-218-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-218-1",
+    "w": 892,
+    "h": 1200,
+    "rotulo": "costas"
+   },
+   {
+    "id": "YQ-218-2",
+    "w": 1200,
+    "h": 1200,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Macaquinho listras na perna em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1320,7 +2350,22 @@
    "preto"
   ],
   "fotos": [
-   "WA0087"
+   "YQ-215-1",
+   "YQ-215-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-215-1",
+    "w": 645,
+    "h": 942,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-215-2",
+    "w": 492,
+    "h": 747,
+    "rotulo": "cores na arara"
+   }
   ],
   "descricao": "Conjunto top recortado + legging em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1338,7 +2383,22 @@
    "verde oliva"
   ],
   "fotos": [
-   "WA0117"
+   "YQ-164-1",
+   "YQ-164-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-164-1",
+    "w": 606,
+    "h": 1200,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-164-2",
+    "w": 594,
+    "h": 1200,
+    "rotulo": "costas"
+   }
   ],
   "descricao": "Conjunto top + short em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1359,7 +2419,22 @@
    "marrom"
   ],
   "fotos": [
-   "WA0047"
+   "YQ-28-1",
+   "YQ-28-2"
+  ],
+  "galeria": [
+   {
+    "id": "YQ-28-1",
+    "w": 752,
+    "h": 738,
+    "rotulo": "frente"
+   },
+   {
+    "id": "YQ-28-2",
+    "w": 1200,
+    "h": 748,
+    "rotulo": "cores"
+   }
   ],
   "descricao": "Macaquinho com debrum em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  },
@@ -1377,7 +2452,22 @@
    "cinza"
   ],
   "fotos": [
-   "WA0073"
+   "Tj-027-1",
+   "Tj-027-2"
+  ],
+  "galeria": [
+   {
+    "id": "Tj-027-1",
+    "w": 594,
+    "h": 1200,
+    "rotulo": "frente"
+   },
+   {
+    "id": "Tj-027-2",
+    "w": 594,
+    "h": 1200,
+    "rotulo": "costas"
+   }
   ],
   "descricao": "Conjunto top + short com listras em poliamida. Ideal para treinar, caminhar ou usar no dia a dia. Tamanhos P, M e G — o tecido tem elasticidade e se ajusta ao corpo. Em caso de dúvida sobre o tamanho, fale com a gente antes de finalizar."
  }

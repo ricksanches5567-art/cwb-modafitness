@@ -67,6 +67,48 @@ async function go(page, jump) {
     const nFlare = await page.$$eval('#grid .card', (c) => c.length);
     check(`${vp.tag}: filtro flare`, nFlare === 2, String(nFlare));
     await page.click('#filters [data-cat="todos"]');
+    // ---- carrossel de fotos nos cards ----
+    await sleep(700);
+    const carInfo = await page.evaluate(() => {
+      const cars = [...document.querySelectorAll('#grid .card .car')];
+      return { cards: cars.length, multi: cars.filter((c) => +c.dataset.n > 1).length, slides: cars.reduce((s, c) => s + +c.dataset.n, 0),
+        noGrain: document.body.classList.contains('no-grain'), grainOpacity: getComputedStyle(document.querySelector('.grain')).opacity,
+        imgFilters: [...document.querySelectorAll('#grid .car img')].slice(0, 12).map((i) => getComputedStyle(i).filter).filter((f) => f !== 'none').length,
+        lazyPending: document.querySelectorAll('#grid .car img[data-src]').length };
+    });
+    check(`${vp.tag}: carrossel em todas as peças (${carInfo.multi} com mais de uma foto, ${carInfo.slides} fotos)`, carInfo.cards === 69 && carInfo.multi >= 55 && carInfo.lazyPending > 0, JSON.stringify(carInfo));
+    check(`${vp.tag}: catálogo sem grão/filtro sobre as fotos`, carInfo.noGrain && carInfo.grainOpacity === '0' && carInfo.imgFilters === 0, JSON.stringify(carInfo));
+    const carSel = '#grid .card:nth-child(1) .car';
+    await page.evaluate((s) => document.querySelector(s).scrollIntoView({ block: 'center' }), carSel); await sleep(500);
+    const res0 = await page.evaluate((s) => { const im = document.querySelector(s + ' .car__slide img'); const r = im.getBoundingClientRect(); return { nat: im.naturalWidth, natH: im.naturalHeight, css: Math.round(r.width), cssH: Math.round(r.height), dpr: devicePixelRatio, fit: getComputedStyle(im).objectFit }; }, carSel);
+    const cobre = res0.fit === 'cover' ? Math.max(res0.css / res0.nat, res0.cssH / res0.natH) : Math.min(res0.css / res0.nat, res0.cssH / res0.natH);
+    check(`${vp.tag}: foto do card sem ampliação (nítida)`, cobre * res0.dpr <= 1.15, JSON.stringify(res0) + ' escala ' + (cobre * res0.dpr).toFixed(2));
+    if (vp.isMobile) {
+      const box = await (await page.$(carSel)).boundingBox();
+      const ty = box.y + box.height / 2, tx = box.x + box.width * 0.8;
+      await page.touchscreen.touchStart(tx, ty);
+      for (let k = 1; k <= 10; k++) { await page.touchscreen.touchMove(tx - k * box.width * 0.07, ty); await sleep(16); }
+      await page.touchscreen.touchEnd(); await sleep(900);
+    } else {
+      await page.hover(carSel); await sleep(300);
+      const navVis = await page.$eval(carSel + ' .car__nav--next', (b) => getComputedStyle(b).opacity);
+      check(`${vp.tag}: setas aparecem no hover`, +navVis > 0.5, navVis);
+      await page.click(carSel + ' .car__nav--next'); await sleep(900);
+    }
+    const car1 = await page.evaluate((s) => { const c = document.querySelector(s), t = c.querySelector('.car__track'), ims = c.querySelectorAll('.car__slide img');
+      return { idx: Math.round(t.scrollLeft / t.clientWidth), dot: [...c.querySelectorAll('.car__dots button')].findIndex((b) => b.getAttribute('aria-current') === 'true'), loaded: ims[1].complete && ims[1].naturalWidth > 0, modalOpen: !document.querySelector('#productModal').hidden }; }, carSel);
+    check(`${vp.tag}: ${vp.isMobile ? 'arrastar com o dedo' : 'seta'} passa para a 2ª foto (carregada sob demanda)`, car1.idx === 1 && car1.dot === 1 && car1.loaded && !car1.modalOpen, JSON.stringify(car1));
+    await page.screenshot({ path: `${OUT}/${vp.tag}-11-carrossel-card.png` });
+    if (!vp.isMobile) { await page.click(carSel + ' .car__dots button:nth-child(1)'); await sleep(800);
+      const back = await page.$eval(carSel + ' .car__track', (t) => Math.round(t.scrollLeft / t.clientWidth)); check(`${vp.tag}: bolinha volta para a 1ª foto`, back === 0, String(back)); }
+    // página da peça com carrossel grande + miniaturas
+    await page.evaluate(() => CWB.openProduct('YQ-1207')); await sleep(700);
+    const pm0 = await page.evaluate(() => ({ n: document.querySelectorAll('#pmBody .car__slide').length, thumbs: document.querySelectorAll('#pmBody .pm__thumbs button').length, grain: getComputedStyle(document.querySelector('.grain')).opacity }));
+    await page.click('#pmBody .pm__thumbs button:nth-child(3)'); await sleep(900);
+    const pm1 = await page.evaluate(() => { const t = document.querySelector('#pmBody .car__track'); const im = document.querySelectorAll('#pmBody .car__slide img')[2]; return { idx: Math.round(t.scrollLeft / t.clientWidth), thumb: [...document.querySelectorAll('#pmBody .pm__thumbs button')].findIndex((b) => b.getAttribute('aria-current') === 'true'), loaded: im.complete && im.naturalWidth > 0, src: im.currentSrc.split('/').pop() }; });
+    check(`${vp.tag}: página da peça com carrossel e miniaturas`, pm0.n === 3 && pm0.thumbs === 3 && pm0.grain === '0' && pm1.idx === 2 && pm1.thumb === 2 && pm1.loaded && /YQ-1207-3/.test(pm1.src), JSON.stringify([pm0, pm1]));
+    await page.screenshot({ path: `${OUT}/${vp.tag}-11b-carrossel-peca.png` });
+    await page.keyboard.press('Escape'); await sleep(500);
     await page.type('#search', 'YQ-1213'); await sleep(200);
     const nS = await page.$$eval('#grid .card', (c) => c.length);
     check(`${vp.tag}: busca por código`, nS === 1, String(nS));

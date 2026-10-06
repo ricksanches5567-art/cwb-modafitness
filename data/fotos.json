@@ -1,0 +1,884 @@
+{
+ "YQ-1219-1": {
+  "w": 532,
+  "h": 1200,
+  "rotulo": "modelo",
+  "origem": "WA0050"
+ },
+ "YQ-1219-2": {
+  "w": 717,
+  "h": 1200,
+  "rotulo": "cores na arara",
+  "origem": "WA0050"
+ },
+ "YQ-1213-1": {
+  "w": 896,
+  "h": 1058,
+  "rotulo": "lateral",
+  "origem": "WA0095"
+ },
+ "YQ-1212-1": {
+  "w": 502,
+  "h": 761,
+  "rotulo": "modelo",
+  "origem": "WA0118"
+ },
+ "YQ-1212-2": {
+  "w": 406,
+  "h": 564,
+  "rotulo": "cores na arara",
+  "origem": "WA0118"
+ },
+ "YQ-1212-3": {
+  "w": 287,
+  "h": 600,
+  "rotulo": "outra cor",
+  "origem": "WA0118"
+ },
+ "YQ-1210-1": {
+  "w": 591,
+  "h": 1195,
+  "rotulo": "frente",
+  "origem": "WA0060"
+ },
+ "YQ-1209-1": {
+  "w": 896,
+  "h": 1028,
+  "rotulo": "cores",
+  "origem": "WA0106"
+ },
+ "YQ-1207-1": {
+  "w": 679,
+  "h": 1200,
+  "rotulo": "frente",
+  "origem": "WA0056"
+ },
+ "YQ-1207-2": {
+  "w": 792,
+  "h": 792,
+  "rotulo": "costas",
+  "origem": "WA0056"
+ },
+ "YQ-1207-3": {
+  "w": 792,
+  "h": 749,
+  "rotulo": "cores na arara",
+  "origem": "WA0056"
+ },
+ "YQ-1205-1": {
+  "w": 924,
+  "h": 1200,
+  "rotulo": "costas",
+  "origem": "WA0066"
+ },
+ "YQ-1205-2": {
+  "w": 494,
+  "h": 792,
+  "rotulo": "frente",
+  "origem": "WA0066"
+ },
+ "YQ-1205-3": {
+  "w": 430,
+  "h": 851,
+  "rotulo": "frente (vinho)",
+  "origem": "WA0105"
+ },
+ "YQ-1205-4": {
+  "w": 621,
+  "h": 600,
+  "rotulo": "cores na arara",
+  "origem": "WA0105"
+ },
+ "YQ-1205-5": {
+  "w": 494,
+  "h": 792,
+  "rotulo": "tecido",
+  "origem": "WA0066"
+ },
+ "YQ-1196-1": {
+  "w": 538,
+  "h": 851,
+  "rotulo": "lateral",
+  "origem": "WA0062"
+ },
+ "YQ-1196-2": {
+  "w": 561,
+  "h": 574,
+  "rotulo": "cores na arara",
+  "origem": "WA0062"
+ },
+ "YQ-1192-1": {
+  "w": 693,
+  "h": 780,
+  "rotulo": "frente",
+  "origem": "WA0076"
+ },
+ "YQ-1192-2": {
+  "w": 454,
+  "h": 493,
+  "rotulo": "cores na arara",
+  "origem": "WA0076"
+ },
+ "YQ-1191-1": {
+  "w": 598,
+  "h": 797,
+  "rotulo": "frente",
+  "origem": "WA0064"
+ },
+ "YQ-1191-2": {
+  "w": 478,
+  "h": 421,
+  "rotulo": "cores na arara",
+  "origem": "WA0064"
+ },
+ "YQ-1191-3": {
+  "w": 382,
+  "h": 690,
+  "rotulo": "costas (espelho)",
+  "origem": "WA0064"
+ },
+ "YQ-1190-1": {
+  "w": 502,
+  "h": 1190,
+  "rotulo": "costas",
+  "origem": "WA0054"
+ },
+ "YQ-1190-2": {
+  "w": 493,
+  "h": 963,
+  "rotulo": "cores na arara",
+  "origem": "WA0054"
+ },
+ "YQ-1189-1": {
+  "w": 627,
+  "h": 1023,
+  "rotulo": "costas",
+  "origem": "WA0085"
+ },
+ "YQ-1189-2": {
+  "w": 430,
+  "h": 750,
+  "rotulo": "cores",
+  "origem": "WA0085"
+ },
+ "YQ-1188-1": {
+  "w": 645,
+  "h": 1028,
+  "rotulo": "frente",
+  "origem": "WA0109"
+ },
+ "YQ-1181-1": {
+  "w": 866,
+  "h": 1200,
+  "rotulo": "costas",
+  "origem": "WA0038"
+ },
+ "YQ-1181-2": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0038"
+ },
+ "YQ-1180-1": {
+  "w": 897,
+  "h": 1200,
+  "rotulo": "costas",
+  "origem": "WA0027"
+ },
+ "YQ-1180-2": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0027"
+ },
+ "YQ-1179-1": {
+  "w": 773,
+  "h": 1200,
+  "rotulo": "frente",
+  "origem": "WA0044"
+ },
+ "YQ-1179-2": {
+  "w": 553,
+  "h": 792,
+  "rotulo": "detalhe",
+  "origem": "WA0044"
+ },
+ "YQ-1179-3": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0044"
+ },
+ "YQ-1177-1": {
+  "w": 892,
+  "h": 1200,
+  "rotulo": "costas",
+  "origem": "WA0036"
+ },
+ "YQ-1177-2": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0036"
+ },
+ "YQ-1174-1": {
+  "w": 836,
+  "h": 1200,
+  "rotulo": "costas",
+  "origem": "WA0029"
+ },
+ "YQ-1174-2": {
+  "w": 842,
+  "h": 1200,
+  "rotulo": "costas (outra foto)",
+  "origem": "WA0070"
+ },
+ "YQ-1174-3": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0029"
+ },
+ "YQ-1169-1": {
+  "w": 854,
+  "h": 1200,
+  "rotulo": "costas",
+  "origem": "WA0035"
+ },
+ "YQ-1169-2": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0035"
+ },
+ "YQ-1167-1": {
+  "w": 906,
+  "h": 1200,
+  "rotulo": "frente",
+  "origem": "WA0042"
+ },
+ "YQ-1167-2": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0042"
+ },
+ "YQ-1166-1": {
+  "w": 896,
+  "h": 1017,
+  "rotulo": "costas",
+  "origem": "WA0098"
+ },
+ "YQ-1166-2": {
+  "w": 896,
+  "h": 1190,
+  "rotulo": "frente",
+  "origem": "WA0096"
+ },
+ "YQ-1162-1": {
+  "w": 606,
+  "h": 1200,
+  "rotulo": "frente",
+  "origem": "WA0025"
+ },
+ "YQ-1162-2": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "detalhe e cores",
+  "origem": "WA0025"
+ },
+ "YQ-1159-1": {
+  "w": 896,
+  "h": 1023,
+  "rotulo": "costas",
+  "origem": "WA0088"
+ },
+ "YQ-1156-1": {
+  "w": 831,
+  "h": 1200,
+  "rotulo": "frente",
+  "origem": "WA0032"
+ },
+ "YQ-1156-2": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0032"
+ },
+ "YQ-1155-1": {
+  "w": 605,
+  "h": 1127,
+  "rotulo": "frente",
+  "origem": "WA0071"
+ },
+ "YQ-1155-2": {
+  "w": 363,
+  "h": 1065,
+  "rotulo": "cores",
+  "origem": "WA0071"
+ },
+ "YQ-1154-1": {
+  "w": 836,
+  "h": 1200,
+  "rotulo": "costas",
+  "origem": "WA0039"
+ },
+ "YQ-1154-2": {
+  "w": 606,
+  "h": 1200,
+  "rotulo": "frente (verde oliva)",
+  "origem": "WA0115"
+ },
+ "YQ-1154-3": {
+  "w": 594,
+  "h": 1200,
+  "rotulo": "costas (verde oliva)",
+  "origem": "WA0115"
+ },
+ "YQ-1154-4": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0039"
+ },
+ "YQ-1151-1": {
+  "w": 526,
+  "h": 869,
+  "rotulo": "frente",
+  "origem": "WA0081"
+ },
+ "YQ-1151-2": {
+  "w": 609,
+  "h": 645,
+  "rotulo": "cores na arara",
+  "origem": "WA0081"
+ },
+ "YQ-1150-1": {
+  "w": 550,
+  "h": 815,
+  "rotulo": "frente",
+  "origem": "WA0078"
+ },
+ "YQ-1150-2": {
+  "w": 621,
+  "h": 636,
+  "rotulo": "cores na arara",
+  "origem": "WA0078"
+ },
+ "YQ-1140-1": {
+  "w": 865,
+  "h": 1200,
+  "rotulo": "frente",
+  "origem": "WA0026"
+ },
+ "YQ-1140-2": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0026"
+ },
+ "YQ-1137-1": {
+  "w": 896,
+  "h": 1023,
+  "rotulo": "frente",
+  "origem": "WA0092"
+ },
+ "YQ-1137-2": {
+  "w": 896,
+  "h": 1190,
+  "rotulo": "costas",
+  "origem": "WA0090"
+ },
+ "YQ-1130-1": {
+  "w": 887,
+  "h": 1200,
+  "rotulo": "frente",
+  "origem": "WA0040"
+ },
+ "YQ-1130-2": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0040"
+ },
+ "YQ-1129-1": {
+  "w": 933,
+  "h": 1200,
+  "rotulo": "frente",
+  "origem": "WA0034"
+ },
+ "YQ-1129-2": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0034"
+ },
+ "YQ-1116-1": {
+  "w": 625,
+  "h": 1200,
+  "rotulo": "frente",
+  "origem": "WA0107"
+ },
+ "YQ-1116-2": {
+  "w": 563,
+  "h": 1200,
+  "rotulo": "costas",
+  "origem": "WA0107"
+ },
+ "YQ-1109-1": {
+  "w": 879,
+  "h": 1200,
+  "rotulo": "frente",
+  "origem": "WA0030"
+ },
+ "YQ-1109-2": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0030"
+ },
+ "YQ-310-1": {
+  "w": 1031,
+  "h": 1200,
+  "rotulo": "costas e cores",
+  "origem": "WA0037"
+ },
+ "YQ-308-1": {
+  "w": 896,
+  "h": 1023,
+  "rotulo": "frente",
+  "origem": "WA0100"
+ },
+ "YQ-278-1": {
+  "w": 896,
+  "h": 1041,
+  "rotulo": "frente",
+  "origem": "WA0119"
+ },
+ "YQ-268-1": {
+  "w": 727,
+  "h": 755,
+  "rotulo": "frente",
+  "origem": "WA0057"
+ },
+ "YQ-268-2": {
+  "w": 976,
+  "h": 679,
+  "rotulo": "cores na arara",
+  "origem": "WA0048"
+ },
+ "YQ-265-1": {
+  "w": 956,
+  "h": 744,
+  "rotulo": "frente",
+  "origem": "WA0051"
+ },
+ "YQ-265-2": {
+  "w": 908,
+  "h": 717,
+  "rotulo": "cores na arara",
+  "origem": "WA0045"
+ },
+ "YQ-263-1": {
+  "w": 487,
+  "h": 514,
+  "rotulo": "frente",
+  "origem": "WA0053"
+ },
+ "YQ-263-2": {
+  "w": 609,
+  "h": 458,
+  "rotulo": "cores na arara",
+  "origem": "WA0053"
+ },
+ "YQ-262-1": {
+  "w": 414,
+  "h": 531,
+  "rotulo": "frente",
+  "origem": "WA0072"
+ },
+ "YQ-262-2": {
+  "w": 608,
+  "h": 354,
+  "rotulo": "cores na arara",
+  "origem": "WA0072"
+ },
+ "YQ-261-1": {
+  "w": 1097,
+  "h": 629,
+  "rotulo": "cores",
+  "origem": "WA0079"
+ },
+ "YQ-261-2": {
+  "w": 483,
+  "h": 629,
+  "rotulo": "marinho e vinho",
+  "origem": "WA0079"
+ },
+ "YQ-261-3": {
+  "w": 658,
+  "h": 629,
+  "rotulo": "cinza, preto e marrom",
+  "origem": "WA0079"
+ },
+ "YQ-260-1": {
+  "w": 565,
+  "h": 795,
+  "rotulo": "frente",
+  "origem": "WA0058"
+ },
+ "YQ-260-2": {
+  "w": 577,
+  "h": 553,
+  "rotulo": "cores",
+  "origem": "WA0058"
+ },
+ "YQ-257-1": {
+  "w": 378,
+  "h": 822,
+  "rotulo": "frente",
+  "origem": "WA0067"
+ },
+ "YQ-257-2": {
+  "w": 300,
+  "h": 840,
+  "rotulo": "lateral",
+  "origem": "WA0067"
+ },
+ "YQ-257-3": {
+  "w": 445,
+  "h": 632,
+  "rotulo": "cores na arara",
+  "origem": "WA0067"
+ },
+ "YQ-256-1": {
+  "w": 478,
+  "h": 797,
+  "rotulo": "frente (marinho)",
+  "origem": "WA0101"
+ },
+ "YQ-256-2": {
+  "w": 406,
+  "h": 797,
+  "rotulo": "costas (preto)",
+  "origem": "WA0101"
+ },
+ "YQ-256-3": {
+  "w": 502,
+  "h": 422,
+  "rotulo": "cores na arara",
+  "origem": "WA0101"
+ },
+ "YQ-255-1": {
+  "w": 566,
+  "h": 826,
+  "rotulo": "frente",
+  "origem": "WA0077"
+ },
+ "YQ-255-2": {
+  "w": 465,
+  "h": 696,
+  "rotulo": "cores na arara",
+  "origem": "WA0077"
+ },
+ "YQ-254-1": {
+  "w": 574,
+  "h": 713,
+  "rotulo": "frente",
+  "origem": "WA0111"
+ },
+ "YQ-254-2": {
+  "w": 574,
+  "h": 416,
+  "rotulo": "cores na arara",
+  "origem": "WA0111"
+ },
+ "YQ-251-1": {
+  "w": 598,
+  "h": 1200,
+  "rotulo": "costas",
+  "origem": "WA0049"
+ },
+ "YQ-251-2": {
+  "w": 718,
+  "h": 1200,
+  "rotulo": "cores na arara",
+  "origem": "WA0049"
+ },
+ "YQ-249-1": {
+  "w": 598,
+  "h": 833,
+  "rotulo": "frente e costas",
+  "origem": "WA0083"
+ },
+ "YQ-249-2": {
+  "w": 597,
+  "h": 726,
+  "rotulo": "cores na arara",
+  "origem": "WA0083"
+ },
+ "YQ-248-1": {
+  "w": 598,
+  "h": 833,
+  "rotulo": "frente e costas",
+  "origem": "WA0068"
+ },
+ "YQ-248-2": {
+  "w": 597,
+  "h": 600,
+  "rotulo": "cores na arara",
+  "origem": "WA0068"
+ },
+ "YQ-243-1": {
+  "w": 598,
+  "h": 735,
+  "rotulo": "frente",
+  "origem": "WA0108"
+ },
+ "YQ-243-2": {
+  "w": 597,
+  "h": 735,
+  "rotulo": "costas",
+  "origem": "WA0108"
+ },
+ "YQ-242-1": {
+  "w": 869,
+  "h": 1200,
+  "rotulo": "frente",
+  "origem": "WA0061"
+ },
+ "YQ-242-2": {
+  "w": 553,
+  "h": 986,
+  "rotulo": "costas",
+  "origem": "WA0061"
+ },
+ "YQ-242-3": {
+  "w": 553,
+  "h": 597,
+  "rotulo": "tecido",
+  "origem": "WA0061"
+ },
+ "YQ-237-1": {
+  "w": 609,
+  "h": 1190,
+  "rotulo": "frente",
+  "origem": "WA0086"
+ },
+ "YQ-237-2": {
+  "w": 896,
+  "h": 1190,
+  "rotulo": "costas",
+  "origem": "WA0084"
+ },
+ "YQ-236-1": {
+  "w": 896,
+  "h": 1017,
+  "rotulo": "frente",
+  "origem": "WA0082"
+ },
+ "YQ-236-2": {
+  "w": 896,
+  "h": 1190,
+  "rotulo": "costas",
+  "origem": "WA0080"
+ },
+ "YQ-232-1": {
+  "w": 856,
+  "h": 1200,
+  "rotulo": "frente e costas",
+  "origem": "WA0031"
+ },
+ "YQ-232-2": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0031"
+ },
+ "YQ-228-1": {
+  "w": 1024,
+  "h": 891,
+  "rotulo": "frente",
+  "origem": "WA0074"
+ },
+ "YQ-228-2": {
+  "w": 1080,
+  "h": 1080,
+  "rotulo": "frente (taupe)",
+  "origem": "WA0075"
+ },
+ "YQ-227-1": {
+  "w": 671,
+  "h": 791,
+  "rotulo": "cores",
+  "origem": "WA0055"
+ },
+ "YQ-226-1": {
+  "w": 951,
+  "h": 1200,
+  "rotulo": "costas",
+  "origem": "WA0063"
+ },
+ "YQ-226-2": {
+  "w": 456,
+  "h": 792,
+  "rotulo": "frente",
+  "origem": "WA0063"
+ },
+ "YQ-226-3": {
+  "w": 456,
+  "h": 792,
+  "rotulo": "tecido",
+  "origem": "WA0063"
+ },
+ "YQ-225-1": {
+  "w": 594,
+  "h": 1200,
+  "rotulo": "frente",
+  "origem": "WA0112"
+ },
+ "YQ-225-2": {
+  "w": 594,
+  "h": 1200,
+  "rotulo": "costas",
+  "origem": "WA0112"
+ },
+ "YQ-224-1": {
+  "w": 594,
+  "h": 1200,
+  "rotulo": "frente",
+  "origem": "WA0116"
+ },
+ "YQ-224-2": {
+  "w": 594,
+  "h": 1200,
+  "rotulo": "costas",
+  "origem": "WA0116"
+ },
+ "YQ-223-1": {
+  "w": 903,
+  "h": 1200,
+  "rotulo": "costas",
+  "origem": "WA0033"
+ },
+ "YQ-223-2": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0033"
+ },
+ "YQ-222-1": {
+  "w": 902,
+  "h": 1200,
+  "rotulo": "costas (marrom)",
+  "origem": "WA0041"
+ },
+ "YQ-222-2": {
+  "w": 594,
+  "h": 1200,
+  "rotulo": "frente (preto)",
+  "origem": "WA0114"
+ },
+ "YQ-222-3": {
+  "w": 594,
+  "h": 1200,
+  "rotulo": "costas (preto)",
+  "origem": "WA0114"
+ },
+ "YQ-222-4": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0041"
+ },
+ "YQ-221-1": {
+  "w": 986,
+  "h": 1200,
+  "rotulo": "frente",
+  "origem": "WA0065"
+ },
+ "YQ-221-2": {
+  "w": 414,
+  "h": 792,
+  "rotulo": "costas",
+  "origem": "WA0065"
+ },
+ "YQ-221-3": {
+  "w": 414,
+  "h": 600,
+  "rotulo": "tecido",
+  "origem": "WA0065"
+ },
+ "YQ-219-1": {
+  "w": 843,
+  "h": 1200,
+  "rotulo": "costas",
+  "origem": "WA0028"
+ },
+ "YQ-219-2": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0028"
+ },
+ "YQ-218-1": {
+  "w": 892,
+  "h": 1200,
+  "rotulo": "costas",
+  "origem": "WA0043"
+ },
+ "YQ-218-2": {
+  "w": 1200,
+  "h": 1200,
+  "rotulo": "cores",
+  "origem": "WA0043"
+ },
+ "YQ-215-1": {
+  "w": 645,
+  "h": 942,
+  "rotulo": "frente",
+  "origem": "WA0087"
+ },
+ "YQ-215-2": {
+  "w": 492,
+  "h": 747,
+  "rotulo": "cores na arara",
+  "origem": "WA0087"
+ },
+ "YQ-164-1": {
+  "w": 606,
+  "h": 1200,
+  "rotulo": "frente",
+  "origem": "WA0117"
+ },
+ "YQ-164-2": {
+  "w": 594,
+  "h": 1200,
+  "rotulo": "costas",
+  "origem": "WA0117"
+ },
+ "YQ-28-1": {
+  "w": 752,
+  "h": 738,
+  "rotulo": "frente",
+  "origem": "WA0047"
+ },
+ "YQ-28-2": {
+  "w": 1200,
+  "h": 748,
+  "rotulo": "cores",
+  "origem": "WA0047"
+ },
+ "Tj-027-1": {
+  "w": 594,
+  "h": 1200,
+  "rotulo": "frente",
+  "origem": "WA0073"
+ },
+ "Tj-027-2": {
+  "w": 594,
+  "h": 1200,
+  "rotulo": "costas",
+  "origem": "WA0073"
+ }
+}

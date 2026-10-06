@@ -217,13 +217,77 @@
     if (!list.length) { $('#grid').innerHTML = '<p class="empty">Nenhuma peça encontrada. Confira o código ou escolha outra categoria.</p>'; return; }
     $('#grid').innerHTML = list.map(function (p, i) {
       return '<article class="card" data-codigo="' + esc(p.codigo) + '">' +
-        '<button class="card__img" data-open="' + esc(p.codigo) + '" aria-label="Ver ' + esc(p.nome) + ' ' + esc(p.codigo) + '">' +
-        '<img src="img/t/' + p.fotos[0] + '.webp" alt="' + esc(p.nome) + ' – ' + esc(p.codigo) + '" width="400" height="400" ' + (i < 4 ? 'fetchpriority="high"' : 'loading="lazy"') + ' decoding="async">' +
-        (p.fotos.length > 1 ? '<span class="card__tag">' + p.fotos.length + ' fotos</span>' : '') + '</button>' +
+        '<div class="card__img">' + carousel(p, 't', i < 4) + '</div>' +
         '<div class="card__body"><h3 class="card__name">' + esc(p.nome) + '</h3><span class="card__code">Cód. ' + esc(p.codigo) + '</span>' +
         '<span class="card__price">' + money(p.preco) + '</span><button class="card__btn" data-open="' + esc(p.codigo) + '">Ver detalhes</button></div></article>';
     }).join('');
+    initCarousels($('#grid'));
   }
+
+  /* ---------------- carrossel de fotos (card e página da peça) ----------------
+     Rolagem nativa com scroll-snap: arrastar com o dedo no celular; setas e bolinhas no
+     computador. Só a 1ª foto carrega de início; as outras carregam perto de aparecer. */
+  function galeria(p) { return p.galeria && p.galeria.length ? p.galeria : p.fotos.map(function (f) { return { id: f, w: 4, h: 5, rotulo: '' }; }); }
+  function carousel(p, tam, prioridade) {
+    var g = galeria(p), n = g.length, base = tam === 'p' ? 'img/p/' : 'img/t/';
+    var slides = g.map(function (f, i) {
+      var r = f.w / f.h, fit = r >= 0.74 && r <= 0.92 ? 'cover' : 'contain';
+      var alt = esc(p.nome) + ' – ' + esc(p.codigo) + (f.rotulo ? ' – ' + esc(f.rotulo) : '') + (n > 1 ? ' (foto ' + (i + 1) + ' de ' + n + ')' : '');
+      var src = i === 0 ? 'src="' + base + f.id + '.webp"' : 'data-src="' + base + f.id + '.webp"';
+      var img = '<img ' + src + ' alt="' + alt + '" width="' + f.w + '" height="' + f.h + '" class="fit-' + fit + '" decoding="async"' +
+        (i === 0 ? (prioridade ? ' fetchpriority="high"' : ' loading="lazy"') : '') + '>';
+      return tam === 'p' ? '<div class="car__slide" role="group" aria-roledescription="foto" aria-label="' + (i + 1) + ' de ' + n + '">' + img + '</div>'
+        : '<button class="car__slide" data-open="' + esc(p.codigo) + '" aria-label="Ver ' + esc(p.nome) + ' ' + esc(p.codigo) + (n > 1 ? ', foto ' + (i + 1) + ' de ' + n : '') + '">' + img + '</button>';
+    }).join('');
+    var extra = n > 1 ? '<button class="car__nav car__nav--prev" data-car="-1" aria-label="Foto anterior" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>' +
+      '<button class="car__nav car__nav--next" data-car="1" aria-label="Próxima foto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>' +
+      '<div class="car__dots">' + g.map(function (f, i) { return '<button data-car-go="' + i + '" aria-label="Foto ' + (i + 1) + '"' + (i === 0 ? ' aria-current="true"' : '') + '></button>'; }).join('') + '</div>' +
+      (tam === 't' ? '<span class="card__tag">' + n + ' fotos</span>' : '') : '';
+    return '<div class="car car--' + tam + '" data-n="' + n + '" aria-roledescription="carrossel" aria-label="Fotos de ' + esc(p.nome) + '"><div class="car__track" tabindex="-1">' + slides + '</div>' + extra + '</div>';
+  }
+  function carLoad(car, i) {
+    var im = $$('.car__slide img', car)[i];
+    if (im && im.getAttribute('data-src')) { im.src = im.getAttribute('data-src'); im.removeAttribute('data-src'); }
+  }
+  function carIndex(car) { var t = $('.car__track', car); return t.clientWidth ? Math.round(t.scrollLeft / t.clientWidth) : 0; }
+  function carSync(car) {
+    var i = carIndex(car), n = +car.getAttribute('data-n');
+    carLoad(car, i); carLoad(car, i + 1); carLoad(car, i - 1);
+    $$('.car__dots button', car).forEach(function (b, k) { if (k === i) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
+    var pv = $('.car__nav--prev', car), nx = $('.car__nav--next', car);
+    if (pv) pv.disabled = i <= 0; if (nx) nx.disabled = i >= n - 1;
+    var th = car.parentNode && car.parentNode.querySelector('.pm__thumbs');
+    if (th) $$('button', th).forEach(function (b, k) { b.setAttribute('aria-current', k === i); });
+  }
+  function carGo(car, i) {
+    var t = $('.car__track', car), n = +car.getAttribute('data-n');
+    i = Math.max(0, Math.min(n - 1, i)); carLoad(car, i);
+    var reduz = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    t.scrollTo({ left: i * t.clientWidth, behavior: reduz ? 'auto' : 'smooth' });
+  }
+  var carObs = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { carLoad(e.target, 1); carObs.unobserve(e.target); } });
+  }, { rootMargin: '200px' }) : null;
+  function initCarousels(root) {
+    $$('.car', root).forEach(function (car) {
+      if (car.getAttribute('data-ok') || +car.getAttribute('data-n') < 2) return;
+      car.setAttribute('data-ok', '1');
+      var t = $('.car__track', car), raf = 0;
+      t.addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(function () { raf = 0; carSync(car); }); }, { passive: true });
+      if (carObs) carObs.observe(car); else carLoad(car, 1);
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-car],[data-car-go]'); if (!b) return;
+    var car = b.closest('.car') || ($('#pmBody .car')); if (!car) return;
+    e.preventDefault(); e.stopPropagation();
+    if (b.hasAttribute('data-car-go')) carGo(car, +b.getAttribute('data-car-go')); else carGo(car, carIndex(car) + +b.getAttribute('data-car'));
+  }, true);
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    var car = e.target.closest && e.target.closest('.car'); if (!car) return;
+    e.preventDefault(); carGo(car, carIndex(car) + (e.key === 'ArrowRight' ? 1 : -1));
+  });
 
   /* ---------------- página da peça ---------------- */
   var openedByClick = false, currentCode = null, pmFrete = { sig: '', busy: false, err: '', r: null };
@@ -233,9 +297,9 @@
     if (push) { openedByClick = true; history.pushState({ p: codigo }, '', '#p/' + encodeURIComponent(codigo)); }
     var multi = p.cores.length > 1, cores = multi ? p.cores : p.cores.concat([OUTRA_COR]);
     $('#pmBody').innerHTML =
-      '<div class="pm__gallery"><img class="pm__main" id="pmMain" src="img/p/' + p.fotos[0] + '.webp" alt="' + esc(p.nome) + ' – ' + esc(p.codigo) + '" width="1000" height="1000">' +
-      (p.fotos.length > 1 ? '<div class="pm__thumbs">' + p.fotos.map(function (f, i) {
-        return '<button data-foto="' + f + '" aria-label="Foto ' + (i + 1) + '" aria-current="' + (i === 0) + '"><img src="img/t/' + f + '.webp" alt="" loading="lazy"></button>';
+      '<div class="pm__gallery">' + carousel(p, 'p', true) +
+      (p.fotos.length > 1 ? '<div class="pm__thumbs">' + galeria(p).map(function (f, i) {
+        return '<button data-car-go="' + i + '" aria-label="Foto ' + (i + 1) + (f.rotulo ? ': ' + esc(f.rotulo) : '') + '" aria-current="' + (i === 0) + '"><img src="img/t/' + f.id + '.webp" alt="" loading="lazy"></button>';
       }).join('') + '</div>' : '') + '</div>' +
       '<div class="pm__info"><span class="pm__code">Cód. ' + esc(p.codigo) + ' · ' + esc(catName(p.categoria)) + '</span>' +
       '<h2 class="pm__title" id="pmTitle">' + esc(p.nome) + '</h2><div class="pm__price">' + money(p.preco) + '</div>' +
@@ -254,6 +318,7 @@
       '<p class="pm__pay">Pague com Pix, cartão ou boleto no Mercado Pago, com o frete incluso, ou finalize pelo WhatsApp.</p>' +
       '<div id="pmFrete"></div></div>';
     renderPmFrete();
+    initCarousels($('#pmBody'));
     var m = $('#productModal'); m.hidden = false; document.body.classList.add('lock');
     $('.modal__panel', m).scrollTop = 0;
     document.title = p.nome + ' ' + p.codigo + ' | ' + (CFG.nomeLoja || 'CWB Moda Fitness');
@@ -501,8 +566,6 @@
     $('#grid').addEventListener('click', function (e) { var b = e.target.closest('[data-open]'); if (b) openProduct(b.getAttribute('data-open'), true); });
     $('#productModal').addEventListener('click', function (e) {
       if (e.target.closest('[data-close]')) return closeProduct(false);
-      var f = e.target.closest('[data-foto]');
-      if (f) { $('#pmMain').src = 'img/p/' + f.getAttribute('data-foto') + '.webp'; $$('.pm__thumbs button').forEach(function (x) { x.setAttribute('aria-current', x === f); }); }
       var s = e.target.closest('[data-size]');
       if (s) { $$('#pmSizes .size').forEach(function (x) { x.setAttribute('aria-pressed', x === s); }); $('#pmErr').hidden = true; }
       var q = e.target.closest('[data-q]');
@@ -586,8 +649,14 @@
     if (hasWa()) { var n = waNumber(); $('#waFooterItem').hidden = false; $('#waLinkFooter').href = waUrl(''); $('#waLinkFooter').textContent = 'WhatsApp (' + n.slice(2, 4) + ') ' + n.slice(4, n.length - 4) + '-' + n.slice(-4); }
     $('#year').textContent = new Date().getFullYear();
   }
+  /* O grão decorativo (.grain) fica fora do catálogo: sobre as fotos das peças ele deixava o
+     tecido com aspecto felpudo/"flanelado". */
+  function grainOffCatalog() {
+    var cat = $('#catalogo'); if (!cat || !('IntersectionObserver' in window)) { document.body.classList.add('no-grain'); return; }
+    new IntersectionObserver(function (es) { document.body.classList.toggle('no-grain', es[0].isIntersecting); }, { threshold: 0 }).observe(cat);
+  }
   function init() {
-    applyConfig(); bind(); updateCount(); checkHealth();
+    applyConfig(); bind(); updateCount(); checkHealth(); grainOffCatalog();
     fetch('data/produtos.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (data) {
       produtos = data; data.forEach(function (p) { porCodigo[p.codigo] = p; });
       renderFilters(); renderGrid(); updateCount(); routeFromHash(); handleReturn();

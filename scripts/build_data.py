@@ -5,10 +5,12 @@ Para mudar preços: edite data/precos.csv (coluna "Preço (R$)", ex.: 74,90)
 e rode:  python3 scripts/build_data.py
 
 - data/precos.csv         -> Código;Peça;Preço (R$);Tamanhos;Base do preço
-- data/produtos_info.csv  -> Código;Fotos;Cores;Empina   (fotos separadas por espaço)
-Produtos sem foto em produtos_info.csv não aparecem no site.
+- data/produtos_info.csv  -> Código;Fotos;Cores;Empina   (Fotos = fotos originais usadas, informativo)
+- scripts/fotos_views.py  -> vistas do carrossel de cada peça (recortes); rode antes
+                             scripts/process_images.py, que gera img/p, img/t e data/fotos.json
+Produtos sem vistas em fotos_views.py não aparecem no site.
 """
-import csv, json, os, re
+import csv, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -36,6 +38,10 @@ def descricao(nome, cat, empina):
     return ' '.join(d)
 
 def main():
+    sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+    from fotos_views import VIEWS
+    with open(os.path.join(ROOT, 'data', 'fotos.json'), encoding='utf-8') as f:
+        fotos_info = json.load(f)
     info = {}
     with open(os.path.join(ROOT, 'data', 'produtos_info.csv'), encoding='utf-8-sig') as f:
         for r in csv.DictReader(f, delimiter=';'):
@@ -48,8 +54,8 @@ def main():
             preco = float(r['Preço (R$)'].strip().replace('.', '').replace(',', '.'))
             tam = [t.strip() for t in r['Tamanhos'].split(',') if t.strip()]
             i = info.get(code)
-            fotos = i['Fotos'].split() if i else []
-            if not fotos:
+            fotos = [f'{code}-{n}' for n in range(1, len(VIEWS.get(code, [])) + 1)]
+            if not i or not fotos or any(f not in fotos_info for f in fotos):
                 omitidos.append(code)
                 continue
             cat = categoria(nome)
@@ -62,6 +68,7 @@ def main():
                 'tamanhos': tam,
                 'cores': [c.strip() for c in i['Cores'].split(',') if c.strip()],
                 'fotos': fotos,
+                'galeria': [{'id': f, 'w': fotos_info[f]['w'], 'h': fotos_info[f]['h'], 'rotulo': fotos_info[f]['rotulo']} for f in fotos],
                 'descricao': descricao(nome, cat, empina),
             })
     def key(p):

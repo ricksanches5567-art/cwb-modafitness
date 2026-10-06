@@ -4,7 +4,7 @@ YQ-1109;WA0030;azul petróleo;
 YQ-1116;WA0107;grafite;
 YQ-1129;WA0034;verde oliva;
 YQ-1130;WA0040;grafite;
-YQ-1137;WA0092;marrom;nao
+YQ-1137;WA0092 WA0090;marrom;nao
 YQ-1140;WA0026;grafite;
 YQ-1150;WA0078;rosa terracota, rosa, azul claro, marrom, preto, cinza;nao
 YQ-1151;WA0081;rosa terracota, preto, marrom, rosa, azul claro, cinza;nao
@@ -13,7 +13,7 @@ YQ-1155;WA0071;castanho, cinza, verde oliva, azul, preto;nao
 YQ-1156;WA0032;preto;
 YQ-1159;WA0088;marrom;nao
 YQ-1162;WA0025;preto, marrom, rosa, cinza, verde;nao
-YQ-1166;WA0098;cinza;nao
+YQ-1166;WA0098 WA0096;cinza;nao
 YQ-1167;WA0042;preto;
 YQ-1169;WA0035;azul royal;
 YQ-1174;WA0029 WA0070;grafite;
@@ -27,7 +27,7 @@ YQ-1190;WA0054;vinho, preto, marrom, cinza, marinho;
 YQ-1191;WA0064;marinho, vinho, marrom, preto, cinza;
 YQ-1192;WA0076;preto, marrom, marinho, cinza, vinho;
 YQ-1196;WA0062;vinho, cinza, marrom, marinho, preto;nao
-YQ-1205;WA0066;marinho;nao
+YQ-1205;WA0066 WA0105;marinho;nao
 YQ-1207;WA0056;vinho, marrom, marinho, cinza, preto;
 YQ-1209;WA0106;preto, vinho, marrom, cinza;nao
 YQ-1210;WA0060;marinho, preto;
