@@ -125,17 +125,14 @@
     <div class="drawer__foot" id="cartFoot">
       <div class="subtotal"><span>Subtotal</span><strong id="cartSubtotal">R$ 0,00</strong></div>
       <p class="ship-note">Frete: informe o seu CEP ao finalizar o pedido.</p>
+      <div class="mp-box" id="cartMp" hidden>
+        <button class="btn btn--mp" id="checkoutMp">Pagar com Mercado Pago</button>
+        <p class="mp-note">Depois de pagar, envie o comprovante com código, tamanho e cor no WhatsApp.</p>
+      </div>
       <button class="btn btn--wa" id="checkoutWa">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path class="fill" d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.8l5.1-1.3A9.7 9.7 0 1 0 12 2.2Zm5.7 13.7c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1 0-1.5.8-2.2 1.1-2.5.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.5Z"/></svg>
         <span id="checkoutWaLabel">Finalizar pelo WhatsApp</span>
       </button>
-      <button class="btn btn--mp" id="checkoutMp" hidden>Pagar com Mercado Pago</button>
-      <div class="mp-confirm" id="mpConfirm" hidden>
-        <p>Total a pagar: <strong id="mpTotal">R$ 0,00</strong></p>
-        <p class="small">Vamos abrir o Mercado Pago numa nova aba e enviar o seu pedido pelo WhatsApp para a loja confirmar.</p>
-        <button class="btn btn--mp" id="mpGo">Continuar para o pagamento</button>
-        <button class="link-btn" id="mpCancel">Voltar</button>
-      </div>
       <a class="alt-contact" id="altContact" href="https://ig.me/m/cwb_modafitness" target="_blank" rel="noopener">Prefere o Instagram? Fale pelo Direct</a>
     </div>
   </aside>

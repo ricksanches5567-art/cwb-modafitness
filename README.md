@@ -5,16 +5,18 @@ https://ricksanches5567-art.github.io/cwb-modafitness/
 
 ## Configurar (arquivo `config.js`)
 - `whatsappNumber`: número que recebe os pedidos (55 + DDD + número, só números).
-- `mercadoPagoLink`: link de pagamento do Mercado Pago. Vazio = botão escondido.
-- `mercadoPagoLinks`: (opcional) links por código de peça.
+- `mercadoPagoLinks`: links de pagamento do Mercado Pago por faixa de preço (chave = preço como no CSV, ex.: `"74,90"`).
+  O botão aparece na página da peça e na sacola com 1 peça (quantidade 1). Com mais peças, a cliente
+  finaliza pelo WhatsApp (Pix ou link Mercado Pago). `{}` esconde o Mercado Pago.
 - `instagram`: usuário do Instagram, sem @.
 
 Nunca coloque token ou senha do Mercado Pago no site: só links de pagamento.
 
 ## Mudar preços
 1. Edite `data/precos.csv` (separado por `;`, preço no formato `74,90`).
-2. Rode `python3 scripts/build_data.py` para gerar `data/produtos.json`.
-3. Faça commit e push.
+2. Se criar um preço novo, crie o link do Mercado Pago desse valor e coloque em `config.js`.
+3. Rode `python3 scripts/build_data.py` para gerar `data/produtos.json`.
+4. Faça commit e push.
 
 ## Fotos e cores
 `data/produtos_info.csv` define fotos (ex.: `WA0095`), cores e se o modelo tem empina.

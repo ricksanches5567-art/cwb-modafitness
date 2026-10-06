@@ -17,17 +17,22 @@ window.LOJA_CONFIG = {
   // Instagram da loja (sem o @)
   instagram: "cwb_modafitness",
 
-  // Link de pagamento do Mercado Pago (um único link, ex.: "https://mpago.la/xxxxxx"
-  // ou "https://link.mercadopago.com.br/sualoja").
-  // Enquanto estiver vazio (""), o botão "Pagar com Mercado Pago" fica escondido.
-  // Quando preenchido: o botão mostra o total, abre o link numa nova aba e
-  // também envia o pedido pelo WhatsApp para você saber o que foi comprado.
-  mercadoPagoLink: "",
-
-  // (Opcional) Links de pagamento por peça, pelo código. Usado quando o
-  // carrinho tem uma única peça (quantidade 1) que tenha link aqui.
-  // Exemplo:  mercadoPagoLinks: { "YQ-1213": "https://mpago.la/abc123" },
-  mercadoPagoLinks: {},
+  // Links de pagamento do Mercado Pago, um por FAIXA DE PREÇO (valor fixo).
+  // A chave é o preço exatamente como está em data/precos.csv (ex.: "74,90").
+  // Cada peça usa o link do seu preço. O botão "Pagar com Mercado Pago"
+  // aparece na página da peça e na sacola quando há só 1 peça (quantidade 1).
+  // Com mais peças, a cliente finaliza pelo WhatsApp (Pix ou link Mercado Pago).
+  // Se mudar um preço no CSV, crie/cole aqui o link do novo valor.
+  // Para esconder o Mercado Pago, deixe:  mercadoPagoLinks: {},
+  mercadoPagoLinks: {
+    "49,90": "https://mpago.la/1ja811w",   // Short poliamida – CWB Moda Fitness
+    "64,90": "https://mpago.la/2Dga6aw",   // Legging poliamida – CWB Moda Fitness
+    "74,90": "https://mpago.la/2UxwBdm",   // Macaquinho poliamida – CWB Moda Fitness
+    "79,90": "https://mpago.la/1SLnsd1",   // Conjunto top + short poliamida – CWB Moda Fitness
+    "89,90": "https://mpago.la/1QhajdQ",   // Calça flare poliamida – CWB Moda Fitness
+    "94,90": "https://mpago.la/1tE8FAR",   // Conjunto top + legging poliamida – CWB Moda Fitness
+    "99,90": "https://mpago.la/2DKbH4H"   // Macacão longo / flare poliamida – CWB Moda Fitness
+  },
 
   // Cidade e texto de envio (rodapé)
   cidade: "Curitiba – PR",

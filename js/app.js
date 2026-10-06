@@ -47,9 +47,11 @@
     var el = $('#cartCount'); el.textContent = n; el.hidden = n === 0;
   }
 
-  function buildOrderText(opts) {
+  // lines: [{codigo, tamanho, cor, qtd}]  |  opts.pagamento: 'mp' (pagou no link) ou vazio
+  function buildOrderText(opts, lines) {
     opts = opts || {};
-    var linhas = validLines();
+    var linhas = (lines || validLines()).filter(function (l) { return porCodigo[l.codigo]; });
+    var soma = linhas.reduce(function (s, l) { return s + porCodigo[l.codigo].preco * l.qtd; }, 0);
     var t = 'Olá! Quero fazer este pedido pelo site da ' + (CFG.nomeLoja || 'CWB Moda Fitness') + ':\n\n';
     linhas.forEach(function (l, i) {
       var p = porCodigo[l.codigo];
@@ -57,12 +59,12 @@
       t += '   Tamanho: ' + l.tamanho + ' | Cor: ' + l.cor + ' | Qtd: ' + l.qtd + '\n';
       t += '   ' + money(p.preco) + (l.qtd > 1 ? ' cada = ' + money(p.preco * l.qtd) : '') + '\n';
     });
-    t += '\nTotal: ' + money(total()) + ' (sem o frete)\n';
-    if (opts.mercadoPago) {
-      t += '\nPagamento: Mercado Pago (abri o link de pagamento pelo site).\n';
+    t += '\nTotal: ' + money(soma) + ' (sem o frete)\n';
+    if (opts.pagamento === 'mp') {
+      t += '\nPagamento: paguei pelo link do Mercado Pago (' + money(soma) + '). Vou enviar o comprovante aqui.\n';
       t += '\nMeu nome:\nCEP:\n';
     } else {
-      t += '\nMeu nome:\nCEP:\nForma de pagamento (Pix/cartão):\n';
+      t += '\nMeu nome:\nCEP:\nForma de pagamento (Pix ou cartão pelo link Mercado Pago):\n';
     }
     return t;
   }
@@ -100,12 +102,15 @@
     else { var w2 = openTab(igDirect()); if (!w2) setTimeout(function () { window.location.href = igDirect(); }, 1800); }
   }
 
-  function mpLinkForCart() {
-    var linhas = validLines();
-    var per = CFG.mercadoPagoLinks || {};
-    if (linhas.length === 1 && linhas[0].qtd === 1 && per[linhas[0].codigo]) return per[linhas[0].codigo];
-    return CFG.mercadoPagoLink || '';
+  function priceKey(v) { return Number(v).toFixed(2).replace('.', ','); }
+  function mpLinkForProduct(p) {
+    var links = CFG.mercadoPagoLinks || {};
+    return (p && (links[p.codigo] || links[priceKey(p.preco)])) || '';
   }
+  // Mercado Pago só quando a sacola tem exatamente 1 peça (quantidade 1)
+  function cartSingle() { var l = validLines(); return l.length === 1 && l[0].qtd === 1 ? l[0] : null; }
+  function mpLinkForCart() { var one = cartSingle(); return one ? mpLinkForProduct(porCodigo[one.codigo]) : ''; }
+  var cartPaidMp = false;
 
   /* ---------------- catálogo ---------------- */
   function renderFilters() {
@@ -167,12 +172,33 @@
       '<div class="field"><span class="field__label">Quantidade</span><div class="qty"><button data-q="-1" aria-label="Diminuir">−</button>' +
       '<input id="pmQty" type="number" min="1" max="99" value="1" inputmode="numeric" aria-label="Quantidade"><button data-q="1" aria-label="Aumentar">+</button></div></div>' +
       '<p class="err" id="pmErr" hidden></p>' +
-      '<button class="btn btn--plum" id="pmAdd">Adicionar ao carrinho</button></div>';
+      '<button class="btn btn--plum" id="pmAdd">Adicionar ao carrinho</button>' +
+      (mpLinkForProduct(p) ?
+        '<div class="pm__mp"><p class="pm__mp-title">Ou compre só esta peça agora:</p>' +
+        '<button class="btn btn--mp" id="pmMpBtn">Pagar com Mercado Pago · ' + money(p.preco) + '</button>' +
+        '<p class="mp-note" id="pmMpNote">Depois de pagar, envie o comprovante com código, tamanho e cor no WhatsApp.</p>' +
+        '<button class="btn btn--wa-outline" id="pmWaBtn">Enviar pedido no WhatsApp</button>' +
+        '<p class="hint" id="pmMpQtyHint" hidden>O link do Mercado Pago é para 1 peça. Para mais peças, adicione ao carrinho e finalize pelo WhatsApp.</p></div>' : '') +
+      '</div>';
     $('#pmBody').innerHTML = html;
     var m = $('#productModal'); m.hidden = false; document.body.classList.add('lock');
     $('.modal__panel', m).scrollTop = 0;
     document.title = p.nome + ' ' + p.codigo + ' | ' + (CFG.nomeLoja || 'CWB Moda Fitness');
     setTimeout(function () { var b = $('.close-btn', m); if (b) b.focus({ preventScroll: true }); }, 30);
+  }
+  // tamanho/cor escolhidos na página da peça (quantidade 1) – mostra erro se faltar
+  function currentSelection() {
+    var sel = document.querySelector('#pmSizes .size[aria-pressed="true"]');
+    var cor = $('#pmCor').value, err = $('#pmErr');
+    if (!sel) { err.textContent = 'Escolha o tamanho (P, M ou G).'; err.hidden = false; err.scrollIntoView({ block: 'center', behavior: 'smooth' }); return null; }
+    if (!cor) { err.textContent = 'Escolha a cor.'; err.hidden = false; err.scrollIntoView({ block: 'center', behavior: 'smooth' }); return null; }
+    err.hidden = true;
+    return { codigo: currentCode, tamanho: sel.getAttribute('data-size'), cor: cor, qtd: 1 };
+  }
+  function updatePmQtyState() {
+    var b = $('#pmMpBtn'); if (!b) return;
+    var many = (parseInt($('#pmQty').value, 10) || 1) > 1;
+    b.disabled = many; $('#pmWaBtn').disabled = many; $('#pmMpQtyHint').hidden = !many;
   }
   function closeProduct(fromHistory) {
     var m = $('#productModal'); if (m.hidden) return;
@@ -190,7 +216,7 @@
 
   /* ---------------- sacola (gaveta) ---------------- */
   function openCart() { renderCart(); $('#cartDrawer').hidden = false; document.body.classList.add('lock'); }
-  function closeCart() { $('#cartDrawer').hidden = true; if ($('#productModal').hidden) document.body.classList.remove('lock'); $('#mpConfirm').hidden = true; }
+  function closeCart() { $('#cartDrawer').hidden = true; if ($('#productModal').hidden) document.body.classList.remove('lock'); }
   function renderCart() {
     var linhas = validLines();
     $('#cartFoot').hidden = linhas.length === 0;
@@ -205,10 +231,14 @@
     }).join('');
     $('#cartSubtotal').textContent = money(total());
     var mp = mpLinkForCart();
-    $('#checkoutMp').hidden = !mp || !$('#mpConfirm').hidden;
+    if (!mp) cartPaidMp = false;
+    $('#cartMp').hidden = !mp;
     $('#checkoutMp').textContent = 'Pagar com Mercado Pago · ' + money(total());
-    $('#mpTotal').textContent = money(total());
-    $('#checkoutWaLabel').textContent = hasWa() ? 'Finalizar pelo WhatsApp' : 'Finalizar pelo Direct do Instagram';
+    $('#cartMp .mp-note').classList.toggle('is-active', cartPaidMp);
+    var canal = hasWa() ? 'WhatsApp' : 'Direct do Instagram';
+    $('#checkoutWaLabel').textContent = mp
+      ? (cartPaidMp ? 'Enviar pedido e comprovante no ' + canal : 'Finalizar pelo ' + canal + ' (Pix)')
+      : 'Finalizar pelo ' + canal + ' (pagamento por Pix ou link Mercado Pago)';
   }
   function setLineQty(key, q) {
     cart.forEach(function (l) { if (l.key === key) l.qtd = Math.max(1, Math.min(99, q || 1)); });
@@ -242,6 +272,20 @@
       if (s) { Array.prototype.forEach.call(document.querySelectorAll('#pmSizes .size'), function (x) { x.setAttribute('aria-pressed', x === s); }); $('#pmErr').hidden = true; }
       var q = e.target.closest('[data-q]');
       if (q) { var i = $('#pmQty'); i.value = Math.max(1, Math.min(99, (parseInt(i.value, 10) || 1) + parseInt(q.getAttribute('data-q'), 10))); }
+      if (e.target.closest('#pmMpBtn')) {
+        var one = currentSelection(); if (!one) return;
+        var link = mpLinkForProduct(porCodigo[currentCode]); if (!link) return;
+        openTab(link) || (window.location.href = link);
+        var note = $('#pmMpNote'); if (note) note.classList.add('is-active');
+        toast('Depois de pagar, envie o comprovante no WhatsApp 👇', 4500);
+        return;
+      }
+      if (e.target.closest('#pmWaBtn')) {
+        var sel1 = currentSelection(); if (!sel1) return;
+        sendOrder(buildOrderText({ pagamento: 'mp' }, [sel1]), false);
+        return;
+      }
+      if (q) updatePmQtyState();
       if (e.target.closest('#pmAdd')) {
         var sel = document.querySelector('#pmSizes .size[aria-pressed="true"]');
         var cor = $('#pmCor').value;
@@ -256,7 +300,7 @@
         closeProduct(false); setTimeout(openCart, 60);
       }
     });
-    $('#productModal').addEventListener('change', function (e) { if (e.target.id === 'pmCor') $('#pmErr').hidden = true; });
+    $('#productModal').addEventListener('change', function (e) { if (e.target.id === 'pmCor') $('#pmErr').hidden = true; if (e.target.id === 'pmQty') updatePmQtyState(); });
     $('#openCart').addEventListener('click', openCart);
     $('#cartDrawer').addEventListener('click', function (e) {
       if (e.target.closest('[data-close-cart]')) return closeCart();
@@ -269,15 +313,15 @@
     $('#cartDrawer').addEventListener('change', function (e) {
       if (e.target.hasAttribute('data-lqi')) setLineQty(e.target.closest('.line').getAttribute('data-key'), parseInt(e.target.value, 10));
     });
-    $('#checkoutWa').addEventListener('click', function () { if (validLines().length) sendOrder(buildOrderText({}), false); });
-    $('#checkoutMp').addEventListener('click', function () { $('#mpConfirm').hidden = false; $('#checkoutMp').hidden = true; });
-    $('#mpCancel').addEventListener('click', function () { $('#mpConfirm').hidden = true; renderCart(); });
-    $('#mpGo').addEventListener('click', function () {
-      var link = mpLinkForCart(); if (!link || !validLines().length) return;
-      var text = buildOrderText({ mercadoPago: true });
-      var w = openTab(link);                     // Mercado Pago em nova aba
-      if (!w) { window.location.href = link; return; }
-      sendOrder(text, true);                     // pedido pelo WhatsApp nesta aba
+    $('#checkoutWa').addEventListener('click', function () {
+      if (!validLines().length) return;
+      sendOrder(buildOrderText(cartPaidMp && mpLinkForCart() ? { pagamento: 'mp' } : {}), false);
+    });
+    $('#checkoutMp').addEventListener('click', function () {
+      var link = mpLinkForCart(); if (!link) return;
+      openTab(link) || (window.location.href = link);
+      cartPaidMp = true; renderCart();
+      toast('Depois de pagar, envie o comprovante no WhatsApp 👇', 4500);
     });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') { if (!$('#cartDrawer').hidden) closeCart(); else closeProduct(false); }
@@ -310,6 +354,6 @@
   }
 
   // exposto para testes
-  window.CWB = { buildOrderText: buildOrderText, waUrl: waUrl, addToCart: addToCart, cart: function () { return cart; }, total: total, hasWa: hasWa };
+  window.CWB = { buildOrderText: buildOrderText, waUrl: waUrl, addToCart: addToCart, cart: function () { return cart; }, total: total, hasWa: hasWa, mpLinkForProduct: function (c) { return mpLinkForProduct(porCodigo[c]); }, mpLinkForCart: mpLinkForCart };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
