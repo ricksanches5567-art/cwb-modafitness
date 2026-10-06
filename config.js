@@ -17,30 +17,29 @@ window.LOJA_CONFIG = {
   // Instagram da loja (sem o @)
   instagram: "cwb_modafitness",
 
-  // Links de pagamento do Mercado Pago, um por FAIXA DE PREÇO (valor fixo).
-  // A chave é o preço exatamente como está em data/precos.csv (ex.: "74,90").
-  // Cada peça usa o link do seu preço. O botão "Pagar com Mercado Pago"
-  // aparece na página da peça e na sacola quando há só 1 peça (quantidade 1).
-  // Com mais peças, a cliente finaliza pelo WhatsApp (Pix ou link Mercado Pago).
-  // Se mudar um preço no CSV, crie/cole aqui o link do novo valor.
-  // Para esconder o Mercado Pago, deixe:  mercadoPagoLinks: {},
-  mercadoPagoLinks: {
-    "49,90": "https://mpago.la/1ja811w",   // Short poliamida – CWB Moda Fitness
-    "64,90": "https://mpago.la/2Dga6aw",   // Legging poliamida – CWB Moda Fitness
-    "74,90": "https://mpago.la/2UxwBdm",   // Macaquinho poliamida – CWB Moda Fitness
-    "79,90": "https://mpago.la/1SLnsd1",   // Conjunto top + short poliamida – CWB Moda Fitness
-    "89,90": "https://mpago.la/1QhajdQ",   // Calça flare poliamida – CWB Moda Fitness
-    "94,90": "https://mpago.la/1tE8FAR",   // Conjunto top + legging poliamida – CWB Moda Fitness
-    "99,90": "https://mpago.la/2DKbH4H"   // Macacão longo / flare poliamida – CWB Moda Fitness
-  },
+  // ----------------------------------------------------------------------
+  // PAGAMENTO ONLINE + FRETE EM TEMPO REAL (servidor da loja no Cloudflare)
+  // A sacola consulta /frete (Melhor Envio: JeT, Jadlog, Correios, Loggi…)
+  // e o botão "Pagar com Mercado Pago" chama /checkout, que já cobra
+  // peças + frete juntos. Se o servidor não responder, a sacola usa a
+  // tabela de frete abaixo como estimativa e oferece o WhatsApp.
+  apiPagamento: "https://cwb-modafitness-pagamento.cwbmodafitness.workers.dev",
+
+  // Links fixos antigos do Mercado Pago (cobravam só a peça, sem frete).
+  // NÃO são mais usados pelo site; ficam aqui só como referência:
+  //   49,90 https://mpago.la/1ja811w · 64,90 https://mpago.la/2Dga6aw
+  //   74,90 https://mpago.la/2UxwBdm · 79,90 https://mpago.la/1SLnsd1
+  //   89,90 https://mpago.la/1QhajdQ · 94,90 https://mpago.la/1tE8FAR
+  //   99,90 https://mpago.la/2DKbH4H
 
   // ----------------------------------------------------------------------
   // FRETE (estimativa automática pelo CEP — origem: Curitiba-PR, Correios)
   // Valores de balcão para pacote de até 1 kg (cerca de 2 peças) e prazos
   // em dias úteis após a postagem. Cada kg a mais soma "kgAdicional".
-  // Edite à vontade: é só uma ESTIMATIVA; o valor final é confirmado no WhatsApp.
+  // Usada só quando o frete em tempo real não responde (vira ESTIMATIVA,
+  // confirmada no WhatsApp).
   // ----------------------------------------------------------------------
-  freteGratisAcima: 199.90,      // frete grátis (PAC) a partir deste subtotal. Use 0 para desligar.
+  freteGratisAcima: 199.90,      // frete grátis (na entrega mais barata) a partir deste subtotal. O servidor manda o valor oficial.
   fretePesoPecaKg: 0.4,          // peso médio de cada peça embalada
   freteEmbalagemKg: 0.1,         // peso da embalagem
   freteTabela: {
@@ -66,5 +65,5 @@ window.LOJA_CONFIG = {
 
   // Cidade e texto de envio (rodapé)
   cidade: "Curitiba – PR",
-  textoEnvio: "Envio pelos Correios para todo o Brasil; dúvidas e trocas pelo Direct ou WhatsApp."
+  textoEnvio: "Enviamos para todo o Brasil (Correios, Jadlog, JeT, Loggi); dúvidas e trocas pelo Direct ou WhatsApp."
 };
