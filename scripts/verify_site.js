@@ -121,6 +121,8 @@ async function go(page, jump) {
     const f0 = await page.evaluate(() => { const f = document.querySelector('#checkoutForm'); return f && { rua: f.rua.value, bairro: f.bairro.value, cidade: f.cidade.value, uf: f.uf.value, cep: f.cep.value, pay: document.querySelector('#checkoutMp').textContent, payVisible: !document.querySelector('#checkoutMp').hidden }; });
     check(`${vp.tag}: formulário com endereço preenchido pelo CEP`, f0 && /Paulista/.test(f0.rua) && f0.cidade === 'São Paulo' && f0.uf === 'SP' && f0.cep === '01310-100' && f0.payVisible && /Pagar com Mercado Pago · R\$/.test(f0.pay), JSON.stringify(f0));
     await page.screenshot({ path: `${OUT}/${vp.tag}-16-checkout-formulario.png` });
+    const legal = await page.evaluate(() => { const n = document.querySelector('#legalNote'); return { vis: !n.hidden, links: [...n.querySelectorAll('a')].map((a) => a.getAttribute('href')) }; });
+    check(`${vp.tag}: aviso "Ao pagar você concorda" com Termos e Privacidade perto do botão`, legal.vis && legal.links.indexOf('termos.html') !== -1 && legal.links.indexOf('privacidade.html') !== -1, JSON.stringify(legal));
     // validação: CPF inválido e campos vazios
     await page.type('#co_cpf', '11111111111');
     await page.click('#checkoutMp'); await sleep(300);
@@ -199,6 +201,20 @@ async function go(page, jump) {
       const oc = await page.evaluate(() => ({ msg: document.querySelector('#payMsg').textContent, hidden: document.querySelector('#payMsg').hidden }));
       check('desktop: item "Outra cor" pede WhatsApp em vez do Mercado Pago', !oc.hidden && /outra cor/.test(oc.msg), JSON.stringify(oc));
     }
+    await page.close();
+  }
+  // páginas legais + rodapé com vendedor
+  {
+    const page = await newPage(browser, { tag: 'legal', width: 390, height: 844, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+    for (const f of ['trocas.html', 'privacidade.html', 'termos.html']) {
+      const r = await page.goto(BASE + f, { waitUntil: 'networkidle2' });
+      const t = await page.evaluate(() => document.body.innerText);
+      check(`página ${f} (200, CNPJ, contato)`, r.status() === 200 && /37\.789\.447\/0001-00/.test(t) && /99106-4167/.test(t) && /rafaoliveiracwb23@gmail\.com/.test(t), r.status() + ' ' + t.length + ' chars');
+      await page.screenshot({ path: `${OUT}/legal-${f.replace('.html', '')}.png` });
+    }
+    await page.goto(BASE, { waitUntil: 'networkidle2' });
+    const ft = await page.evaluate(() => ({ seller: document.querySelector('.footer__seller').textContent, links: [...document.querySelectorAll('.footer__legal a')].map((a) => a.getAttribute('href')) }));
+    check('rodapé: vendedor com CNPJ e links legais', /CNPJ 37\.789\.447\/0001-00/.test(ft.seller) && /Curitiba/.test(ft.seller) && ft.links.length === 3, JSON.stringify(ft));
     await page.close();
   }
   // reserva: servidor do frete fora do ar -> tabela regional "estimativa" e só WhatsApp

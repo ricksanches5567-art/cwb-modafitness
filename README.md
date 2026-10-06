@@ -42,6 +42,11 @@ e abra http://localhost:8000
 - O WhatsApp (botão "Prefiro finalizar pelo WhatsApp") leva peças, CEP, entrega escolhida e total.
 - O CPF fica só na sessão do navegador (não é salvo no aparelho).
 
+## Páginas legais
+`trocas.html` (arrependimento 7 dias, trocas, defeito), `privacidade.html` (LGPD) e `termos.html`, ligadas no rodapé
+e no aviso ao lado do botão de pagamento. Vendedor: CWB Moda Fitness, CNPJ 37.789.447/0001-00, Curitiba – PR.
+Para editar, ajuste o texto direto nos arquivos HTML.
+
 ## Logo e cores
 - Marca do site: símbolo `#logo-mark` (círculo com "cwb" em Fraunces itálico) no `index.html` e `favicon.svg`.
   Paleta em `css/style.css` (`:root`): ameixa escuro, dourado e rosé; fontes Fraunces + Manrope.

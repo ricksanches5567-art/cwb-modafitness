@@ -418,6 +418,7 @@
     pay.innerHTML = payBusy ? '<span class="spin spin--light"></span>Gerando pagamento seguro…' : 'Pagar com Mercado Pago · ' + money(sub + freteVal);
     $('#mpSecure').hidden = !online() || cartStep !== 2;
     $('#altContact').hidden = cartStep === 2;
+    $('#legalNote').hidden = cartStep !== 2 || !online();
     var msg = payMsg;
     if (!msg && hasOutraCor() && online()) msg = { tipo: 'aviso', texto: 'Uma peça está com "outra cor". Para pagar online, escolha uma das cores da peça ou finalize pelo WhatsApp.' };
     if (!msg && api.online === false) msg = { tipo: 'aviso', texto: 'Pagamento online indisponível no momento. Finalize pelo WhatsApp: respondemos rapidinho.' };
