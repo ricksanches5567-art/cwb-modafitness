@@ -516,3 +516,74 @@ body.no-grain .grain,body.lock .grain{opacity:0}
 .legal__nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:44px}
 .legal__nav a{display:inline-flex;align-items:center;min-height:42px;padding:0 18px;border-radius:999px;border:1px solid var(--plum);color:var(--plum);text-decoration:none;font-weight:700;font-size:13.5px}
 .legal__nav a[aria-current="page"]{background:var(--plum);color:#fff}
+
+/* ------------ promo: cupom de 1ª compra + Pix ------------ */
+.hero__promo{align-self:flex-start;width:fit-content;max-width:100%;display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:-10px 0 24px;padding:9px 16px;border-radius:999px;border:1px solid rgba(230,199,156,.45);background:linear-gradient(120deg,rgba(74,29,63,.62),rgba(22,10,19,.5));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:13px;line-height:1.35;color:rgba(255,255,255,.88);box-shadow:0 10px 30px -18px rgba(0,0,0,.8)}
+.hero__promo b{color:var(--gold);font-weight:800;letter-spacing:.02em}
+.hero__promo i{font-style:normal;color:var(--gold);font-size:10px;opacity:.85}
+.promo__code{display:inline-block;padding:2px 9px;border-radius:7px;border:1px dashed rgba(230,199,156,.8);color:#fff;font:700 12px/1.3 var(--sans);letter-spacing:.12em;background:rgba(230,199,156,.1)}
+.promo__code--sm{padding:1px 7px;font-size:11.5px;color:inherit;border-color:currentColor;background:transparent}
+@media (max-width:560px){
+  .hero__promo{display:flex;flex-direction:column;align-items:flex-start;gap:5px;width:fit-content;border-radius:16px;padding:10px 15px;font-size:12.8px}
+  .hero__promo i{display:none}
+  .promo__item{display:flex;align-items:center;gap:6px}
+  .promo__item::before{content:"✦";color:var(--gold);font-size:9px;opacity:.85}
+}
+.pm__pix{display:flex;align-items:baseline;gap:8px;margin:0 0 4px;font:600 17px/1.3 var(--serif);color:var(--plum)}
+.pm__pix em{font:800 10.5px/1 var(--sans);font-style:normal;letter-spacing:.08em;padding:4px 7px;border-radius:999px;background:#e3f4f1;color:#0b6b5c;align-self:center}
+
+/* forma de pagamento */
+.paybox{margin:4px 0 14px}
+.payopts{display:grid;gap:8px}
+.payopt{position:relative;display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;border:1px solid var(--line);background:#fff;cursor:pointer;transition:border-color .2s,background .2s,box-shadow .2s}
+.payopt input{position:absolute;opacity:0;pointer-events:none}
+.payopt__ic{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:var(--cream);color:var(--plum)}
+.payopt__ic svg{width:20px;height:20px}
+.payopt--pix .payopt__ic{background:#e3f4f1;color:#13a08f}
+.payopt__txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.payopt__txt b{font-size:14px;color:var(--text);line-height:1.3}
+.payopt__em{color:#0b7d6f;font-weight:800}
+.payopt__txt small{font-size:12.5px;color:var(--muted);line-height:1.35}
+.payopt__txt small b{color:#0b7d6f;font-weight:800}
+.payopt__tag{flex:none;padding:5px 9px;border-radius:999px;background:#13a08f;color:#fff;font:800 12px/1 var(--sans);letter-spacing:.03em}
+.payopt::after{content:"";flex:none;width:18px;height:18px;border-radius:50%;border:1.5px solid #cbbcc4;transition:border .2s,box-shadow .2s}
+.payopt.is-on{border-color:var(--plum);background:var(--blush);box-shadow:0 8px 22px -16px rgba(74,29,63,.7)}
+.payopt.is-on::after{border:5.5px solid var(--plum)}
+.payopt--pix.is-on{border-color:#13a08f;background:#effaf8}
+.payopt--pix.is-on::after{border-color:#13a08f}
+.payopt:has(input:focus-visible){outline:2px solid var(--gold);outline-offset:2px}
+
+/* cupom */
+.cupom{margin:0 0 16px;padding:16px;border-radius:18px;background:#fff;border:1px solid var(--line);transition:border-color .2s}
+.cupom__head{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.cupom .field__label{display:flex;align-items:center;gap:7px}
+.cupom .field__label .ic-line{width:17px;height:17px;color:var(--plum-2)}
+.cupom__row{display:flex;gap:8px}
+.cupom__in{flex:1;min-width:0;height:46px;border-radius:12px;border:1px dashed #c9a46a;padding:0 14px;font:700 15px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--plum);background:#fdf8f1}
+.cupom__in::placeholder{text-transform:none;letter-spacing:.01em;font-weight:500;color:#a8949f}
+.cupom__in:focus{outline:0;border-style:solid;border-color:var(--plum-2);box-shadow:0 0 0 3px rgba(107,45,92,.12)}
+.cupom__btn{flex:none;min-width:92px;height:46px;padding:0 18px;border-radius:12px;border:0;background:var(--plum);color:#fff;font-weight:700;font-size:14px;display:grid;place-items:center}
+.cupom__btn[disabled]{opacity:.75}
+.cupom__btn .spin{border-color:rgba(255,255,255,.3);border-top-color:#fff;width:16px;height:16px}
+.cupom__hint{margin:8px 0 0;font-size:12.5px;color:var(--muted)}
+.cupom__hint b{color:var(--plum-2);letter-spacing:.06em}
+.cupom__err{margin:8px 0 0;font-size:13px;font-weight:600;color:#b4233c}
+.cupom.is-err{border-color:#e6a9b4}
+.cupom.is-on{border-color:#c9a46a;background:linear-gradient(135deg,#fffaf2,#fff)}
+.cupom__ok{display:flex;align-items:center;gap:12px}
+.cupom__code{position:relative;flex:none;padding:9px 12px;border-radius:10px;background:var(--plum);color:var(--gold);font:800 13px/1 var(--sans);letter-spacing:.14em;box-shadow:inset 0 0 0 1px rgba(230,199,156,.35)}
+.cupom__code::before,.cupom__code::after{content:"";position:absolute;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:#fffaf2}
+.cupom__code::before{left:-5px}.cupom__code::after{right:-5px}
+.cupom__txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.cupom__txt b{font-size:14px;color:var(--plum)}
+.cupom__txt small{font-size:12.5px;color:#0a7a3a;font-weight:700}
+.cupom__rm{flex:none;border:0;background:none;padding:0 0 8px;color:var(--muted);font-weight:700;font-size:12.5px;text-decoration:underline;text-underline-offset:3px}
+
+/* resumo */
+.sumrow--off span:last-child{color:#0a7a3a;font-weight:800}
+.sumrow--off span:first-child{color:var(--plum-2);font-weight:600}
+.pix-note{margin:0;font-size:12.5px;color:var(--muted);text-align:right}
+.pix-note b{color:#0b7d6f}
+.pix-note span{display:inline-block;margin-left:4px;padding:2px 7px;border-radius:999px;background:#e3f4f1;color:#0b6b5c;font-weight:800;font-size:10.5px;letter-spacing:.05em;vertical-align:1px}
+.btn--pix{background:#13a08f;box-shadow:0 12px 30px -14px rgba(19,160,143,.9)}
+.btn--pix:not([disabled]):hover{background:#0f8b7c}

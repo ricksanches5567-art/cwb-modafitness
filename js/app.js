@@ -3,7 +3,7 @@
   'use strict';
   var CFG = window.LOJA_CONFIG || {};
   var API = String(CFG.apiPagamento || '').replace(/\/+$/, '');
-  var STORE = 'cwb_sacola_v1', FRETE_KEY = 'cwb_frete_v2', CLIENTE_KEY = 'cwb_cliente_v1', PEDIDO_KEY = 'cwb_pedido_v1';
+  var STORE = 'cwb_sacola_v1', FRETE_KEY = 'cwb_frete_v2', CLIENTE_KEY = 'cwb_cliente_v1', PEDIDO_KEY = 'cwb_pedido_v1', PAGTO_KEY = 'cwb_pagto_v1';
   var CATS = [
     ['todos', 'Todos'], ['macaquinhos', 'Macaquinhos'], ['macacoes', 'Macacões'], ['conj-short', 'Conjuntos com short'],
     ['conj-legging', 'Conjuntos com legging'], ['flare', 'Flare/calças'], ['leggings-shorts', 'Leggings e shorts']
@@ -29,6 +29,20 @@
   function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
   function fmtCep(c) { c = digits(c).slice(0, 8); return c.length > 5 ? c.slice(0, 5) + '-' + c.slice(5) : c; }
   function gratisMin() { return Number(CFG.freteGratisAcima) || 0; }
+
+  /* ---------------- descontos: cupom (1ª compra) + Pix ----------------
+     Mesma conta do servidor: peças × (1 − cupom) × (1 − Pix), arredondando a cada etapa. O frete não tem
+     desconto e o frete grátis vale pelo subtotal ANTES dos descontos. O servidor sempre recalcula e valida. */
+  var PIX_PCT = 5;
+  var pagto = load(PAGTO_KEY, 'pix'); if (pagto !== 'pix' && pagto !== 'cartao_boleto') pagto = 'pix';
+  var cupom = { input: '', aplicado: null, erro: '', ok: '', busy: false };   // aplicado: {codigo, pct}
+  try { var cs = JSON.parse(sessionStorage.getItem('cwb_cupom') || 'null'); if (cs && cs.codigo) { cupom.aplicado = { codigo: cs.codigo, pct: cs.pct }; cupom.input = cs.codigo; } } catch (e) {}
+  function saveCupom() { try { sessionStorage.setItem('cwb_cupom', JSON.stringify(cupom.aplicado)); } catch (e) {} }
+  function pctDe(cent, pct) { return Math.round(cent * (100 - pct) / 100); }
+  function descontos(sub) {
+    var s = Math.round(sub * 100), c = cupom.aplicado ? pctDe(s, cupom.aplicado.pct) : s, x = pagto === 'pix' ? pctDe(c, PIX_PCT) : c;
+    return { cupom: cupom.aplicado ? (s - c) / 100 : 0, pix: pagto === 'pix' ? (c - x) / 100 : 0, produtos: x / 100 };
+  }
 
   /* ---------------- sacola ---------------- */
   var cart = load(STORE, []);
@@ -68,6 +82,7 @@
   function checkHealth() {
     apiCall('/health', null, 8000).then(function (d) {
       api.online = !!d.pagamento_online; api.tempoReal = !!d.frete_tempo_real;
+      if (d.desconto_pix_pct != null) PIX_PCT = Number(d.desconto_pix_pct) || 0;
       if (d.frete_gratis_minimo != null) CFG.freteGratisAcima = Number(d.frete_gratis_minimo);
       if (!$('#cartDrawer').hidden) renderCart();
     }).catch(function () { api.online = false; if (!$('#cartDrawer').hidden) renderCart(); });
@@ -177,17 +192,20 @@
       t += '   ' + money(p.preco) + (l.qtd > 1 ? ' cada = ' + money(p.preco * l.qtd) : '') + '\n';
     });
     t += '\nProdutos: ' + money(soma) + '\n';
+    var dd = !lines ? descontos(soma) : { cupom: 0, pix: 0, produtos: soma };
+    if (dd.cupom) t += 'Cupom ' + cupom.aplicado.codigo + ' (1ª compra): −' + money(dd.cupom) + '\n';
+    if (dd.pix) t += 'Desconto Pix (' + PIX_PCT + '%): −' + money(dd.pix) + '\n';
     var op = !lines ? opcaoEscolhida() : null;
     if (op) {
       t += 'Entrega: CEP ' + fmtCep(frete.cep) + (frete.cidade ? ' – ' + frete.cidade + '/' + frete.uf : '') + '\n';
       t += 'Frete: ' + nomeOpcao(op) + ' (' + op.prazo_texto + '): ' + (op.gratis ? 'GRÁTIS' : money(op.preco)) + (op.estimado ? ' (estimativa — confirmar no WhatsApp)' : '') + '\n';
-      t += 'Total com frete: ' + money(soma + (op.gratis ? 0 : op.preco)) + '\n';
+      t += 'Total com frete: ' + money(dd.produtos + (op.gratis ? 0 : op.preco)) + '\n';
     } else t += 'Frete: a calcular (vou informar meu CEP)\n';
     var c = readForm(true);
     t += '\nMeu nome: ' + (c.nome || '') + '\n';
     if (c.rua && c.numero) t += 'Endereço: ' + c.rua + ', ' + c.numero + (c.complemento ? ' – ' + c.complemento : '') + ' – ' + (c.bairro || '') + ' – ' + (c.cidade || '') + '/' + (c.uf || '') + '\n';
     else t += 'Endereço (rua, número, bairro):\n';
-    t += 'Forma de pagamento (Pix ou cartão):\n';
+    t += 'Forma de pagamento: ' + (!lines ? (pagto === 'pix' ? 'Pix (' + PIX_PCT + '% de desconto)' : 'cartão ou boleto') : '(Pix ou cartão)') + '\n';
     return t;
   }
   function openTab(url) { var w = window.open(url, '_blank'); if (w) { try { w.opener = null; } catch (e) {} } return w; }
@@ -315,7 +333,7 @@
       '<input id="pmQty" type="number" min="1" max="99" value="1" inputmode="numeric" aria-label="Quantidade"><button data-q="1" aria-label="Aumentar">+</button></div></div>' +
       '<p class="err" id="pmErr" hidden></p>' +
       '<button class="btn btn--grad btn--block" id="pmAdd">Adicionar à sacola</button>' +
-      '<p class="pm__pay">Pague com Pix, cartão ou boleto no Mercado Pago, com o frete incluso, ou finalize pelo WhatsApp.</p>' +
+      '<p class="pm__pay"><span class="pm__pix">' + money(pctDe(Math.round(p.preco * 100), PIX_PCT) / 100) + ' no Pix <em>' + PIX_PCT + '% OFF</em></span>Pague com Pix, cartão ou boleto no Mercado Pago, com o frete incluso, ou finalize pelo WhatsApp.</p>' +
       '<div id="pmFrete"></div></div>';
     renderPmFrete();
     initCarousels($('#pmBody'));
@@ -420,6 +438,52 @@
     }).join('') + '<button type="submit" hidden></button></form>';
   }
 
+  var IC_PIX = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l3.1 3.1-3.1 3.1-3.1-3.1zM5.7 8.9l3.1 3.1-3.1 3.1L2.6 12zM18.3 8.9l3.1 3.1-3.1 3.1-3.1-3.1zM12 15.2l3.1 3.1-3.1 3.1-3.1-3.1z" fill="currentColor"/></svg>';
+  var IC_CARD = '<svg viewBox="0 0 24 24" class="ic-line" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h4"/></svg>';
+  var IC_TAG = '<svg viewBox="0 0 24 24" class="ic-line" aria-hidden="true"><path d="M3.5 12.6V4.5a1 1 0 0 1 1-1h8.1l7.9 7.9a1.4 1.4 0 0 1 0 2l-6.1 6.1a1.4 1.4 0 0 1-2 0z"/><circle cx="8.3" cy="8.3" r="1.5"/></svg>';
+  function pagamentoHtml(sub) {
+    var d = descontos(sub), s0 = Math.round(sub * 100), c0 = cupom.aplicado ? pctDe(s0, cupom.aplicado.pct) : s0;
+    var pixPreco = pctDe(c0, PIX_PCT) / 100;
+    var op = function (v, ic, titulo, sub2, tag) {
+      var on = pagto === v;
+      return '<label class="payopt' + (on ? ' is-on' : '') + (v === 'pix' ? ' payopt--pix' : '') + '"><input type="radio" name="pagamento" value="' + v + '"' + (on ? ' checked' : '') + '>' +
+        '<span class="payopt__ic">' + ic + '</span><span class="payopt__txt"><b>' + titulo + '</b><small>' + sub2 + '</small></span>' + (tag ? '<span class="payopt__tag">' + tag + '</span>' : '') + '</label>';
+    };
+    return '<div class="paybox"><span class="field__label">Forma de pagamento</span><div class="payopts" role="radiogroup" aria-label="Forma de pagamento">' +
+      op('pix', IC_PIX, 'Pix <span class="payopt__em">(' + PIX_PCT + '% de desconto)</span>', 'Peças por <b>' + money(pixPreco) + '</b> · na hora', '') +
+      op('cartao_boleto', IC_CARD, 'Cartão (parcelado) ou boleto', 'Preço cheio · parcele no cartão', '') +
+      '</div></div>' + cupomHtml(d);
+  }
+  function cupomHtml(d) {
+    var a = cupom.aplicado;
+    return '<div class="cupom' + (a ? ' is-on' : '') + (cupom.erro ? ' is-err' : '') + '"><div class="cupom__head"><label class="field__label" for="co_cupom">' + IC_TAG + (a ? 'Cupom aplicado' : 'Cupom') + '</label>' +
+      (a ? '<button type="button" class="cupom__rm" data-cupom-rm aria-label="Remover cupom">Remover</button>' : '') + '</div>' +
+      (a ? '<div class="cupom__ok"><span class="cupom__code">' + esc(a.codigo) + '</span><span class="cupom__txt"><b>' + a.pct + '% OFF nas peças</b><small>−' + money(d.cupom) + ' · 1ª compra</small></span></div>'
+        : '<div class="cupom__row"><input id="co_cupom" class="cupom__in" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="30" placeholder="Tem um cupom?" value="' + esc(cupom.input) + '">' +
+          '<button type="button" class="cupom__btn" data-cupom-apply' + (cupom.busy ? ' disabled' : '') + '>' + (cupom.busy ? '<span class="spin"></span>' : 'Aplicar') + '</button></div>') +
+      (cupom.erro ? '<p class="cupom__err" role="alert">' + esc(cupom.erro) + '</p>' : '') +
+      (!a && !cupom.erro ? '<p class="cupom__hint">1ª compra? Use <b>BEMVINDA10</b> e ganhe 10% OFF nas peças.</p>' : '') + '</div>';
+  }
+  function aplicarCupom() {
+    if (cupom.busy) return;
+    var inp = $('#co_cupom'); if (inp) cupom.input = inp.value.trim();
+    var code = cupom.input.replace(/\s+/g, '').toUpperCase();
+    cupom.erro = ''; cupom.ok = '';
+    if (!code) { cupom.erro = 'Digite o código do cupom.'; renderCart(); return; }
+    var c = readForm(true);
+    if (!/^[^\s@<>()",;]+@[^\s@<>()",;]+\.[a-z]{2,}$/i.test(c.email || '') || !cpfValido(c.cpf)) {
+      cupom.erro = 'Preencha seu e-mail e CPF acima: o cupom vale só na primeira compra.'; renderCart(); return;
+    }
+    cupom.busy = true; renderCart();
+    apiCall('/cupom', { cupom: code, pagamento: pagto, itens: validLines().map(function (l) { return { codigo: l.codigo, qtd: l.qtd }; }), cliente: { email: c.email, cpf: c.cpf } }, 12000).then(function (d) {
+      cupom.aplicado = { codigo: d.cupom.codigo, pct: d.cupom.pct }; cupom.input = d.cupom.codigo; saveCupom();
+    }).catch(function (e) {
+      cupom.aplicado = null; saveCupom();
+      cupom.erro = (e && e.erro) || (e && e.rede ? 'Sem conexão para validar o cupom. Tente de novo.' : 'Não foi possível validar o cupom.');
+    }).then(function () { cupom.busy = false; renderCart(); });
+  }
+  function removerCupom() { cupom.aplicado = null; cupom.erro = ''; cupom.input = ''; saveCupom(); renderCart(); }
+
   /* ---------------- sacola (gaveta) ---------------- */
   var cartStep = 1, payBusy = false, payMsg = null;   // payMsg: {tipo, texto}
   function openCart(step) {
@@ -463,15 +527,22 @@
       }).join('') + '<div class="cart-frete">' + freteProgress(sub, frete.opcoes && !frete.busy ? frete.falta : null) + freteBox + '</div>';
     } else {
       body.innerHTML = '<div class="co-summary"><span>' + pecas() + (pecas() > 1 ? ' peças' : ' peça') + ' · ' + money(sub) + '</span><button type="button" class="link-btn" data-step="1">Editar sacola</button></div>' +
-        formHtml() + freteBox;
+        formHtml() + freteBox + (online() ? pagamentoHtml(sub) : '');
     }
     // resumo e botões
     var freteVal = op ? (op.gratis ? 0 : op.preco) : 0;
+    var desc = cartStep === 2 && online() ? descontos(sub) : { cupom: 0, pix: 0, produtos: sub };
     $('#cartSubtotal').textContent = money(sub);
+    $('#sumCupom').hidden = !desc.cupom; $('#sumPix').hidden = !desc.pix;
+    if (desc.cupom) { $('#sumCupomLabel').textContent = 'Cupom ' + cupom.aplicado.codigo; $('#cartCupom').textContent = '−' + money(desc.cupom); }
+    if (desc.pix) { $('#cartPix').textContent = '−' + money(desc.pix); }
+    var pixNote = $('#pixNote');
+    pixNote.hidden = !(cartStep === 1 && online() && sub > 0 && PIX_PCT > 0);
+    if (!pixNote.hidden) pixNote.innerHTML = 'ou <b>' + money(pctDe(Math.round(sub * 100), PIX_PCT) / 100 + freteVal) + '</b> no Pix <span>' + PIX_PCT + '% OFF nas peças</span>';
     $('#cartFreteLabel').textContent = op ? 'Frete · ' + nomeOpcao(op) : 'Frete';
     $('#cartFrete').textContent = op ? (op.gratis ? 'Grátis' : money(op.preco)) : (frete.busy ? 'Calculando…' : 'Informe o CEP');
     $('#cartFrete').classList.toggle('is-free', !!(op && op.gratis));
-    $('#cartTotal').textContent = money(sub + freteVal);
+    $('#cartTotal').textContent = money(desc.produtos + freteVal);
     $('#cartTotalLabel').textContent = op ? 'Total com frete' : 'Total sem frete';
     $('#shipNote').textContent = op ? (op.estimado ? 'Frete estimado — confirmamos o valor no WhatsApp.' : 'Entrega ' + op.prazo_texto + ' após a postagem.') : 'Calcule o frete pelo CEP para ver o total.';
     var canPay = online() && op && !frete.busy && !hasOutraCor();
@@ -480,8 +551,10 @@
     next.disabled = !op || frete.busy;
     next.textContent = op ? 'Continuar para entrega e pagamento' : 'Calcule o frete para continuar';
     pay.disabled = !canPay || payBusy;
-    pay.innerHTML = payBusy ? '<span class="spin spin--light"></span>Gerando pagamento seguro…' : 'Pagar com Mercado Pago · ' + money(sub + freteVal);
+    pay.innerHTML = payBusy ? '<span class="spin spin--light"></span>Gerando pagamento seguro…' : (pagto === 'pix' ? 'Pagar com Pix · ' : 'Pagar com Mercado Pago · ') + money(desc.produtos + freteVal);
+    pay.classList.toggle('btn--pix', pagto === 'pix');
     $('#mpSecure').hidden = !online() || cartStep !== 2;
+    $('#mpSecureTxt').textContent = pagto === 'pix' ? 'Pix com ' + PIX_PCT + '% OFF · ambiente seguro do Mercado Pago' : 'Cartão ou boleto · ambiente seguro do Mercado Pago';
     $('#altContact').hidden = cartStep === 2;
     $('#legalNote').hidden = cartStep !== 2 || !online();
     var msg = payMsg;
@@ -512,10 +585,13 @@
     var body = {
       itens: validLines().map(function (l) { var p = porCodigo[l.codigo]; return { codigo: l.codigo, nome: p.nome, tamanho: l.tamanho, cor: l.cor, qtd: l.qtd }; }),
       frete: { servico_id: op.servico_id, preco: op.gratis ? 0 : op.preco },
+      pagamento: pagto,
+      cupom: cupom.aplicado ? cupom.aplicado.codigo : (($('#co_cupom') && $('#co_cupom').value.trim()) || ''),
       cliente: { nome: c.nome, email: c.email, telefone: c.telefone, cpf: c.cpf, cep: fmtCep(c.cep), rua: c.rua, numero: c.numero, complemento: c.complemento || '', bairro: c.bairro, cidade: c.cidade, uf: (c.uf || '').toUpperCase() }
     };
     apiCall('/checkout', body, 25000).then(function (d) {
-      save(PEDIDO_KEY, { id: d.pedido_id, total: d.total, subtotal: d.subtotal, frete: d.frete, itens: body.itens, quando: Date.now() });
+      save(PEDIDO_KEY, { id: d.pedido_id, total: d.total, subtotal: d.subtotal, descontos: d.descontos, pagamento: d.pagamento, frete: d.frete, itens: body.itens, quando: Date.now() });
+      if (d.descontos && d.descontos.cupom && !cupom.aplicado) { cupom.aplicado = { codigo: d.descontos.cupom.codigo, pct: d.descontos.cupom.pct }; saveCupom(); }
       var go = function () { window.__lastInitPoint = d.init_point; if (!window.__noRedirect) window.location.href = d.init_point; };
       if (d.frete_mudou && d.frete) { payMsg = { tipo: 'aviso', texto: 'O frete foi atualizado para ' + (d.frete.gratis ? 'grátis' : money(d.frete.preco)) + '. Abrindo o Mercado Pago…' }; renderCart(); setTimeout(go, 1600); }
       else go();
@@ -526,10 +602,13 @@
       else if (e.codigo === 'frete_indisponivel') {
         if (e.opcoes) { frete.opcoes = e.opcoes; frete.servico = e.opcoes.length ? e.opcoes[0].servico_id : null; }
         payMsg = { tipo: 'aviso', texto: e.erro || 'A entrega escolhida mudou. Escolha o frete de novo.' };
-      } else if (e.campo && e.campo !== 'frete') { fieldErr = {}; fieldErr[e.campo] = e.erro; payMsg = { tipo: 'erro', texto: e.erro }; }
+      } else if (e.campo === 'cupom') {
+        cupom.aplicado = null; saveCupom(); cupom.erro = e.erro || 'Cupom inválido.';
+        payMsg = { tipo: 'erro', texto: (e.erro || 'Cupom inválido.') + ' Remova o cupom para pagar sem ele.' };
+      } else if (e.campo && e.campo !== 'frete' && e.campo !== 'pagamento') { fieldErr = {}; fieldErr[e.campo] = e.erro; payMsg = { tipo: 'erro', texto: e.erro }; }
       else payMsg = { tipo: 'erro', texto: e.erro || 'Não foi possível abrir o pagamento. Tente de novo ou finalize pelo WhatsApp.' };
       renderCart();
-      var bad = $('#checkoutForm .f--err input'); if (bad) bad.scrollIntoView({ block: 'center' });
+      var bad = $('#checkoutForm .f--err input') || (cupom.erro && $('.cupom')); if (bad) bad.scrollIntoView({ block: 'center' });
     });
   }
 
@@ -545,7 +624,7 @@
       pendente: { icon: '⏳', eyebrow: 'Aguardando pagamento', title: 'Quase lá!', msg: 'Se você escolheu Pix ou boleto, é só concluir o pagamento. Assim que ele for confirmado, separamos e enviamos o seu pedido.' },
       erro: { icon: '!', eyebrow: 'Pagamento não concluído', title: 'Não deu certo desta vez', msg: 'O pagamento não foi concluído e nada foi cobrado. Sua sacola continua salva: tente de novo ou finalize pelo WhatsApp.' }
     }[st];
-    if (st === 'ok') { cart = []; saveCart(); localStorage.removeItem(PEDIDO_KEY); }
+    if (st === 'ok') { cart = []; saveCart(); localStorage.removeItem(PEDIDO_KEY); cupom.aplicado = null; cupom.input = ''; saveCupom(); }
     panel.className = 'modal order order--' + st;
     $('#orderIcon').textContent = cfg.icon; $('#orderEyebrow').textContent = cfg.eyebrow; $('#orderTitle').textContent = cfg.title; $('#orderMsg').textContent = cfg.msg;
     $('#orderId').textContent = id ? 'Pedido ' + id + totalTxt : '';
@@ -586,6 +665,8 @@
       if (e.target.closest('#cartBack') || e.target.closest('[data-step="1"]')) return setStep(1);
       if (e.target.closest('#cartNext')) { if (opcaoEscolhida()) { fillAddressFromFrete(false); setStep(2); } return; }
       if (e.target.closest('#checkoutMp')) { e.preventDefault(); return pagar(); }
+      if (e.target.closest('[data-cupom-apply]')) { e.preventDefault(); return aplicarCupom(); }
+      if (e.target.closest('[data-cupom-rm]')) { e.preventDefault(); if (cartStep === 2) readForm(true); return removerCupom(); }
       if (e.target.closest('#checkoutWa')) { if (cartStep === 2) readForm(true); if (validLines().length) sendWhatsApp(buildOrderText()); return; }
       var line = e.target.closest('.line'); if (!line) return;
       var key = line.getAttribute('data-key');
@@ -597,10 +678,12 @@
     $('#cartDrawer').addEventListener('change', function (e) {
       if (e.target.hasAttribute('data-lqi')) setLineQty(e.target.closest('.line').getAttribute('data-key'), parseInt(e.target.value, 10));
       if (e.target.name === 'frete_cart') { frete.servico = e.target.value; saveFrete(); if (cartStep === 2) readForm(true); renderCart(); }
+      if (e.target.name === 'pagamento') { pagto = e.target.value === 'pix' ? 'pix' : 'cartao_boleto'; save(PAGTO_KEY, pagto); readForm(true); payMsg = null; renderCart(); }
     });
     // máscaras e CEP (peça, sacola e formulário)
     document.addEventListener('input', function (e) {
       var t = e.target; if (!t.classList) return;
+      if (t.id === 'co_cupom') { cupom.input = t.value; if (cupom.erro) { cupom.erro = ''; var ce = $('.cupom__err'); if (ce) ce.remove(); $('.cupom').classList.remove('is-err'); } return; }
       if (t.classList.contains('cep-input')) {
         var v = fmtCep(t.value); if (v !== t.value) t.value = v;
         if (digits(v).length === 8) { if (t.id === 'cep_pm') cotarPm(v); else if (digits(v) !== frete.cep || !frete.opcoes) cotarSacola(v); }
@@ -627,6 +710,7 @@
       if (inp.id === 'cep_pm') { pmFrete.sig = ''; cotarPm(inp.value); } else cotarSacola(inp.value, true);
     });
     document.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && e.target.id === 'co_cupom') { e.preventDefault(); aplicarCupom(); return; }
       if (e.key === 'Enter' && e.target.classList && e.target.classList.contains('cep-input')) { e.preventDefault(); var c = e.target.closest('[data-frete]').querySelector('[data-cep-calc]'); if (c) c.click(); }
       if (e.key === 'Escape') { if (!$('#orderPanel').hidden) closeOrder(); else if (!$('#cartDrawer').hidden) closeCart(); else closeProduct(false); }
     });
@@ -664,6 +748,7 @@
   }
   // exposto para testes
   window.CWB = { buildOrderText: buildOrderText, addToCart: addToCart, cart: function () { return cart; }, total: total, frete: function () { return frete; }, api: api,
-    openCart: openCart, openProduct: function (c) { openProduct(c, true); }, cpfValido: cpfValido, opcaoEscolhida: opcaoEscolhida };
+    openCart: openCart, openProduct: function (c) { openProduct(c, true); }, cpfValido: cpfValido, opcaoEscolhida: opcaoEscolhida,
+    descontos: descontos, pagto: function () { return pagto; }, cupom: function () { return cupom; } };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();

@@ -114,7 +114,7 @@
   }
   var intro = gsap.timeline({ defaults: { ease: 'power4.out' }, delay: 0.15 });
   intro.from('.hero__title .ch', { yPercent: 120, rotate: 6, duration: 1.3, stagger: 0.045 })
-    .from('.hero__eyebrow, .hero__tag, .hero__sub, .hero__cta > *', { y: 24, opacity: 0, duration: 1, stagger: 0.08 }, '-=0.9')
+    .from('.hero__eyebrow, .hero__tag, .hero__sub, .hero__promo, .hero__cta > *', { y: 24, opacity: 0, duration: 1, stagger: 0.08 }, '-=0.9')
     .from('.hero__badge, .hero__cue', { opacity: 0, scale: 0.8, duration: 1 }, '-=0.8');
 
   /* ---------- coleção: filme em canvas a partir das fotos reais ---------- */

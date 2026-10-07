@@ -35,6 +35,13 @@ e abra http://localhost:8000
   dígito verificador), CEP (preenche rua/bairro/cidade/UF), número e complemento → "Pagar com Mercado Pago"
   leva para o checkout do Mercado Pago com o frete incluso.
 - Frete grátis na entrega mais barata a partir de R$ 199,90 (valor vem do servidor; `freteGratisAcima` é a reserva).
+- **Forma de pagamento** (etapa 2): "Pix (5% de desconto)" ou "Cartão (parcelado) ou boleto". No Pix o Mercado Pago abre
+  só com Pix e as peças já com desconto; no cartão/boleto o preço é cheio e o parcelamento continua liberado.
+- **Cupom** (etapa 2): campo "Cupom" + "Aplicar" valida no servidor (`POST /cupom`) com o e-mail e o CPF digitados.
+  `BEMVINDA10` = 10% OFF nas peças só na primeira compra (CPF/e-mail sem pedido pago). O servidor confere de novo no
+  pagamento. Descontos empilham nas peças (subtotal × 0,90 × 0,95, centavos arredondados a cada etapa); frete sem desconto;
+  frete grátis pelo subtotal antes dos descontos. O resumo mostra subtotal, cupom, Pix, frete e total.
+- Aviso da promoção no topo (hero), na faixa animada e em "Como comprar"; regras em `termos.html` (seção 3).
 - Volta do Mercado Pago: `#pedido-ok` (agradece e esvazia a sacola), `#pedido-pendente` (Pix/boleto aguardando),
   `#pedido-erro` (tentar de novo). Os parâmetros somem da URL.
 - Se o servidor não responder, a sacola usa `freteTabela` (estimativa por região) e oferece só o WhatsApp.

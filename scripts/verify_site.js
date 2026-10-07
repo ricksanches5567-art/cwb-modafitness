@@ -161,7 +161,7 @@ async function go(page, jump) {
     // etapa 2: formulário
     await page.click('#cartNext'); await sleep(500);
     const f0 = await page.evaluate(() => { const f = document.querySelector('#checkoutForm'); return f && { rua: f.rua.value, bairro: f.bairro.value, cidade: f.cidade.value, uf: f.uf.value, cep: f.cep.value, pay: document.querySelector('#checkoutMp').textContent, payVisible: !document.querySelector('#checkoutMp').hidden }; });
-    check(`${vp.tag}: formulário com endereço preenchido pelo CEP`, f0 && /Paulista/.test(f0.rua) && f0.cidade === 'São Paulo' && f0.uf === 'SP' && f0.cep === '01310-100' && f0.payVisible && /Pagar com Mercado Pago · R\$/.test(f0.pay), JSON.stringify(f0));
+    check(`${vp.tag}: formulário com endereço preenchido pelo CEP`, f0 && /Paulista/.test(f0.rua) && f0.cidade === 'São Paulo' && f0.uf === 'SP' && f0.cep === '01310-100' && f0.payVisible && /Pagar com (Pix|Mercado Pago) · R\$/.test(f0.pay), JSON.stringify(f0));
     await page.screenshot({ path: `${OUT}/${vp.tag}-16-checkout-formulario.png` });
     const legal = await page.evaluate(() => { const n = document.querySelector('#legalNote'); return { vis: !n.hidden, links: [...n.querySelectorAll('a')].map((a) => a.getAttribute('href')) }; });
     check(`${vp.tag}: aviso "Ao pagar você concorda" com Termos e Privacidade perto do botão`, legal.vis && legal.links.indexOf('termos.html') !== -1 && legal.links.indexOf('privacidade.html') !== -1, JSON.stringify(legal));
