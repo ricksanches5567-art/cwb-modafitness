@@ -23,8 +23,8 @@
   function igUrl() { return 'https://www.instagram.com/' + igHandle() + '/'; }
   function igDirect() { return 'https://ig.me/m/' + igHandle(); }
   function waNumber() { return digits(CFG.whatsappNumber); }
-  function hasWa() { var n = waNumber(); return n.length >= 12; }
-  function waUrl(text) { return 'https://wa.me/' + waNumber() + (text ? '?text=' + encodeURIComponent(text) : ''); }
+  function hasWa() { return false; }
+  function waUrl(text) { return '#'; }
   function load(k, d) { try { var v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch (e) { return d; } }
   function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
   function fmtCep(c) { c = digits(c).slice(0, 8); return c.length > 5 ? c.slice(0, 5) + '-' + c.slice(5) : c; }
@@ -564,6 +564,7 @@
     var pm = $('#payMsg'); pm.hidden = !msg; if (msg) { pm.className = 'pay-msg pay-msg--' + msg.tipo; pm.innerHTML = msg.html || esc(msg.texto); }
     $('#checkoutWaLabel').textContent = online() ? 'Prefiro finalizar pelo WhatsApp' : 'Finalizar pelo WhatsApp';
     $('#checkoutWa').className = 'btn ' + (online() ? 'btn--wa-outline' : 'btn--wa') + ' btn--block';
+    var _wa = $('#checkoutWa'); if (_wa) _wa.hidden = true;
   }
   function setLineQty(key, q) { cart.forEach(function (l) { if (l.key === key) l.qtd = Math.max(1, Math.min(99, q || 1)); }); saveCart(); renderCart(); }
 

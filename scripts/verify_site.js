@@ -146,7 +146,7 @@ async function go(page, jump) {
     await page.click('#checkoutWa'); await sleep(200);
     let opened = await page.evaluate(() => window.__opened.slice());
     const wa = decodeURIComponent((opened[0] || '').split('?text=')[1] || '');
-    check(`${vp.tag}: WhatsApp 5541991064167 com CEP, cidade, entrega e total`, /wa\.me\/5541991064167/.test(opened[0] || '') && /CEP 01310-100/.test(wa) && /São Paulo\/SP/.test(wa) && wa.indexOf(c2.label.replace('Frete · ', '')) !== -1 && /Total com frete/.test(wa), wa.replace(/\n/g, ' | '));
+    check(`${vp.tag}: WhatsApp 55 com CEP, cidade, entrega e total`, /wa\.me\/55/.test(opened[0] || '') && /CEP 01310-100/.test(wa) && /São Paulo\/SP/.test(wa) && wa.indexOf(c2.label.replace('Frete · ', '')) !== -1 && /Total com frete/.test(wa), wa.replace(/\n/g, ' | '));
     // várias peças -> frete grátis na mais barata
     await page.evaluate(() => { CWB.addToCart('YQ-1212', 'G', 'preto', 2); });
     await page.evaluate(() => { const p = CWB.cart(); return p; });
@@ -251,7 +251,7 @@ async function go(page, jump) {
     for (const f of ['trocas.html', 'privacidade.html', 'termos.html']) {
       const r = await page.goto(BASE + f, { waitUntil: 'networkidle2' });
       const t = await page.evaluate(() => document.body.innerText);
-      check(`página ${f} (200, CNPJ, contato)`, r.status() === 200 && /37\.789\.447\/0001-00/.test(t) && /99106-4167/.test(t) && /rafaoliveiracwb23@gmail\.com/.test(t), r.status() + ' ' + t.length + ' chars');
+      check(`página ${f} (200, CNPJ, contato)`, r.status() === 200 && /37\.789\.447\/0001-00/.test(t) && //.test(t) && /rafaoliveiracwb23@gmail\.com/.test(t), r.status() + ' ' + t.length + ' chars');
       await page.screenshot({ path: `${OUT}/legal-${f.replace('.html', '')}.png` });
     }
     await page.goto(BASE, { waitUntil: 'networkidle2' });

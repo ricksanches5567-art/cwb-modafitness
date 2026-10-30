@@ -10,9 +10,9 @@ window.LOJA_CONFIG = {
   nomeLoja: "CWB Moda Fitness",
 
   // WhatsApp que recebe os pedidos: 55 + DDD + número, só números.
-  // Exemplo: "5541991064167". Se ficar vazio (""), o botão de finalizar
+  // Exemplo: "55". Se ficar vazio (""), o botão de finalizar
   // abre o Direct do Instagram e copia o pedido para a cliente colar.
-  whatsappNumber: "5541991064167",
+  whatsappNumber: "",
 
   // Instagram da loja (sem o @)
   instagram: "cwb_modafitness",
@@ -65,5 +65,5 @@ window.LOJA_CONFIG = {
 
   // Cidade e texto de envio (rodapé)
   cidade: "Curitiba – PR",
-  textoEnvio: "Enviamos para todo o Brasil (Correios, Jadlog, JeT, Loggi); dúvidas e trocas pelo Direct ou WhatsApp."
+  textoEnvio: "Enviamos para todo o Brasil (Correios, Jadlog, JeT, Loggi); dúvidas e trocas pelo Direct do Instagram."
 };
