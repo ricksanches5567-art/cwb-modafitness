@@ -333,7 +333,7 @@
       '<input id="pmQty" type="number" min="1" max="99" value="1" inputmode="numeric" aria-label="Quantidade"><button data-q="1" aria-label="Aumentar">+</button></div></div>' +
       '<p class="err" id="pmErr" hidden></p>' +
       '<button class="btn btn--grad btn--block" id="pmAdd">Adicionar à sacola</button>' +
-      '<p class="pm__pay"><span class="pm__pix">' + money(pctDe(Math.round(p.preco * 100), PIX_PCT) / 100) + ' no Pix <em>' + PIX_PCT + '% OFF</em></span>Pague com Pix, cartão ou boleto no Mercado Pago, com o frete incluso, ou finalize pelo WhatsApp.</p>' +
+      '<p class="pm__pay">Pagamento online em breve.</p>' +
       '<div id="pmFrete"></div></div>';
     renderPmFrete();
     initCarousels($('#pmBody'));
@@ -545,22 +545,21 @@
     $('#cartTotal').textContent = money(desc.produtos + freteVal);
     $('#cartTotalLabel').textContent = op ? 'Total com frete' : 'Total sem frete';
     $('#shipNote').textContent = op ? (op.estimado ? 'Frete estimado — confirmamos o valor no WhatsApp.' : 'Entrega ' + op.prazo_texto + ' após a postagem.') : 'Calcule o frete pelo CEP para ver o total.';
-    var canPay = online() && op && !frete.busy && !hasOutraCor();
     var next = $('#cartNext'), pay = $('#checkoutMp');
-    next.hidden = cartStep !== 1 || !online(); pay.hidden = cartStep !== 2;
+    next.hidden = cartStep !== 1; pay.hidden = cartStep !== 2;
     next.disabled = !op || frete.busy;
-    next.textContent = op ? 'Continuar para entrega e pagamento' : 'Calcule o frete para continuar';
-    pay.disabled = !canPay || payBusy;
-    pay.innerHTML = payBusy ? '<span class="spin spin--light"></span>Gerando pagamento seguro…' : (pagto === 'pix' ? 'Pagar com Pix · ' : 'Pagar com Mercado Pago · ') + money(desc.produtos + freteVal);
-    pay.classList.toggle('btn--pix', pagto === 'pix');
-    $('#mpSecure').hidden = !online() || cartStep !== 2;
-    $('#mpSecureTxt').textContent = pagto === 'pix' ? 'Pix com ' + PIX_PCT + '% OFF · ambiente seguro do Mercado Pago' : 'Cartão ou boleto · ambiente seguro do Mercado Pago';
+    next.textContent = op ? 'Continuar para entrega' : 'Calcule o frete para continuar';
+    pay.disabled = true;
+    pay.textContent = 'Pagamento online em breve';
+    pay.classList.remove('btn--pix');
+    $('#mpSecure').hidden = cartStep !== 2;
+    $('#mpSecureTxt').textContent = 'Pagamento online em breve';
     $('#altContact').hidden = cartStep === 2;
     $('#legalNote').hidden = cartStep !== 2 || !online();
     var msg = payMsg;
     if (!msg && hasOutraCor() && online()) msg = { tipo: 'aviso', texto: 'Uma peça está com "outra cor". Para pagar online, escolha uma das cores da peça ou finalize pelo WhatsApp.' };
-    if (!msg && api.online === false) msg = { tipo: 'aviso', texto: 'Pagamento online indisponível no momento. Finalize pelo WhatsApp: respondemos rapidinho.' };
-    else if (!msg && frete.tabela && frete.opcoes) msg = { tipo: 'aviso', texto: 'Não conseguimos falar com o sistema de pagamento agora. Finalize pelo WhatsApp ou tente de novo em instantes.' };
+    if (!msg && api.online === false) msg = { tipo: 'aviso', texto: 'Pagamento online em breve.' };
+    else if (!msg && frete.tabela && frete.opcoes) msg = { tipo: 'aviso', texto: 'Pagamento online em breve.' };
     var pm = $('#payMsg'); pm.hidden = !msg; if (msg) { pm.className = 'pay-msg pay-msg--' + msg.tipo; pm.innerHTML = msg.html || esc(msg.texto); }
     $('#checkoutWaLabel').textContent = online() ? 'Prefiro finalizar pelo WhatsApp' : 'Finalizar pelo WhatsApp';
     $('#checkoutWa').className = 'btn ' + (online() ? 'btn--wa-outline' : 'btn--wa') + ' btn--block';
@@ -568,52 +567,13 @@
   }
   function setLineQty(key, q) { cart.forEach(function (l) { if (l.key === key) l.qtd = Math.max(1, Math.min(99, q || 1)); }); saveCart(); renderCart(); }
 
-  /* ---------------- pagar (Mercado Pago via backend) ---------------- */
+  /* ---------------- pagar (pagamento online via backend) ---------------- */
   function pagar() {
-    if (payBusy) return;
-    var c = readForm(); fieldErr = validar(c);
-    var op = opcaoEscolhida();
-    if (Object.keys(fieldErr).length) {
-      payMsg = { tipo: 'erro', texto: 'Confira os campos destacados.' }; renderCart();
-      var first = $('#checkoutForm .f--err input'); if (first) { first.focus(); first.scrollIntoView({ block: 'center' }); }
-      return;
-    }
-    if (digits(c.cep) !== frete.cep || !op) {      // CEP do endereço mudou: recotar e escolher de novo
-      payMsg = { tipo: 'aviso', texto: 'O CEP mudou: confira e escolha a entrega de novo.' };
-      frete.servico = null; cotarSacola(c.cep, true); return;
-    }
-    payBusy = true; payMsg = null; renderCart();
-    var body = {
-      itens: validLines().map(function (l) { var p = porCodigo[l.codigo]; return { codigo: l.codigo, nome: p.nome, tamanho: l.tamanho, cor: l.cor, qtd: l.qtd }; }),
-      frete: { servico_id: op.servico_id, preco: op.gratis ? 0 : op.preco },
-      pagamento: pagto,
-      cupom: cupom.aplicado ? cupom.aplicado.codigo : (($('#co_cupom') && $('#co_cupom').value.trim()) || ''),
-      cliente: { nome: c.nome, email: c.email, telefone: c.telefone, cpf: c.cpf, cep: fmtCep(c.cep), rua: c.rua, numero: c.numero, complemento: c.complemento || '', bairro: c.bairro, cidade: c.cidade, uf: (c.uf || '').toUpperCase() }
-    };
-    apiCall('/checkout', body, 25000).then(function (d) {
-      save(PEDIDO_KEY, { id: d.pedido_id, total: d.total, subtotal: d.subtotal, descontos: d.descontos, pagamento: d.pagamento, frete: d.frete, itens: body.itens, quando: Date.now() });
-      if (d.descontos && d.descontos.cupom && !cupom.aplicado) { cupom.aplicado = { codigo: d.descontos.cupom.codigo, pct: d.descontos.cupom.pct }; saveCupom(); }
-      var go = function () { window.__lastInitPoint = d.init_point; if (!window.__noRedirect) window.location.href = d.init_point; };
-      if (d.frete_mudou && d.frete) { payMsg = { tipo: 'aviso', texto: 'O frete foi atualizado para ' + (d.frete.gratis ? 'grátis' : money(d.frete.preco)) + '. Abrindo o Mercado Pago…' }; renderCart(); setTimeout(go, 1600); }
-      else go();
-    }).catch(function (e) {
-      payBusy = false; e = e || {};
-      if (e.rede) payMsg = { tipo: 'erro', texto: 'Sem conexão com o pagamento. Tente de novo ou finalize pelo WhatsApp.' };
-      else if (e.codigo === 'mp_nao_configurado') { api.online = false; payMsg = { tipo: 'aviso', texto: e.erro || 'Pagamento online indisponível. Finalize pelo WhatsApp.' }; }
-      else if (e.codigo === 'frete_indisponivel') {
-        if (e.opcoes) { frete.opcoes = e.opcoes; frete.servico = e.opcoes.length ? e.opcoes[0].servico_id : null; }
-        payMsg = { tipo: 'aviso', texto: e.erro || 'A entrega escolhida mudou. Escolha o frete de novo.' };
-      } else if (e.campo === 'cupom') {
-        cupom.aplicado = null; saveCupom(); cupom.erro = e.erro || 'Cupom inválido.';
-        payMsg = { tipo: 'erro', texto: (e.erro || 'Cupom inválido.') + ' Remova o cupom para pagar sem ele.' };
-      } else if (e.campo && e.campo !== 'frete' && e.campo !== 'pagamento') { fieldErr = {}; fieldErr[e.campo] = e.erro; payMsg = { tipo: 'erro', texto: e.erro }; }
-      else payMsg = { tipo: 'erro', texto: e.erro || 'Não foi possível abrir o pagamento. Tente de novo ou finalize pelo WhatsApp.' };
-      renderCart();
-      var bad = $('#checkoutForm .f--err input') || (cupom.erro && $('.cupom')); if (bad) bad.scrollIntoView({ block: 'center' });
-    });
+    payMsg = { tipo: 'aviso', texto: 'Pagamento online em breve.' };
+    renderCart();
   }
 
-  /* ---------------- volta do Mercado Pago ---------------- */
+  /* ---------------- volta do pagamento online ---------------- */
   function handleReturn() {
     var h = location.hash, m = /^#pedido-(ok|pendente|erro)$/.exec(h); if (!m) return;
     var qs = new URLSearchParams(location.search), id = qs.get('pedido') || '', saved = load(PEDIDO_KEY, null) || {};
@@ -622,7 +582,7 @@
     var st = m[1], panel = $('#orderPanel'), totalTxt = saved.id === id && saved.total ? ' · ' + money(saved.total) : '';
     var cfg = {
       ok: { icon: '✓', eyebrow: 'Pagamento aprovado', title: 'Pedido recebido!', msg: 'Obrigada por comprar com a gente! Você vai receber a confirmação e o código de rastreio. Qualquer dúvida, chama no WhatsApp.' },
-      pendente: { icon: '⏳', eyebrow: 'Aguardando pagamento', title: 'Quase lá!', msg: 'Se você escolheu Pix ou boleto, é só concluir o pagamento. Assim que ele for confirmado, separamos e enviamos o seu pedido.' },
+      pendente: { icon: '⏳', eyebrow: 'Aguardando pagamento', title: 'Quase lá!', msg: 'Quando o pagamento online estiver disponível, você receberá a confirmação por e-mail.' },
       erro: { icon: '!', eyebrow: 'Pagamento não concluído', title: 'Não deu certo desta vez', msg: 'O pagamento não foi concluído e nada foi cobrado. Sua sacola continua salva: tente de novo ou finalize pelo WhatsApp.' }
     }[st];
     if (st === 'ok') { cart = []; saveCart(); localStorage.removeItem(PEDIDO_KEY); cupom.aplicado = null; cupom.input = ''; saveCupom(); }

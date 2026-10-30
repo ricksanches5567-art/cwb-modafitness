@@ -423,7 +423,7 @@ body.no-grain .grain,body.lock .grain{opacity:0}
 }
 
 /* =====================================================================
-   Checkout (frete em tempo real + Mercado Pago) — na paleta v2
+   Checkout (frete em tempo real) — na paleta v2
    ===================================================================== */
 .btn--grad{background:var(--plum);color:#fff;border:0}
 .btn--grad:hover{background:var(--plum-2)}
@@ -464,7 +464,7 @@ body.no-grain .grain,body.lock .grain{opacity:0}
 .drawer__foot #checkoutWa{min-height:46px}
 @media (max-height:760px),(max-width:480px){.drawer__foot .alt-contact{font-size:12px}}
 
-/* volta do Mercado Pago */
+/* volta do pagamento */
 .order{display:grid;place-items:center;padding:18px}
 .order__panel{position:relative;width:min(460px,100%);max-height:calc(100svh - 36px);overflow:auto;background:var(--cream);color:var(--text);border-radius:28px;padding:34px 26px 26px;text-align:center;box-shadow:0 30px 80px -20px rgba(0,0,0,.6);animation:up .45s var(--ease-out)}
 .order__panel::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,var(--plum),var(--rose-2),var(--gold));border-radius:28px 28px 0 0}

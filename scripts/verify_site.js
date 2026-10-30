@@ -161,7 +161,7 @@ async function go(page, jump) {
     // etapa 2: formulário
     await page.click('#cartNext'); await sleep(500);
     const f0 = await page.evaluate(() => { const f = document.querySelector('#checkoutForm'); return f && { rua: f.rua.value, bairro: f.bairro.value, cidade: f.cidade.value, uf: f.uf.value, cep: f.cep.value, pay: document.querySelector('#checkoutMp').textContent, payVisible: !document.querySelector('#checkoutMp').hidden }; });
-    check(`${vp.tag}: formulário com endereço preenchido pelo CEP`, f0 && /Paulista/.test(f0.rua) && f0.cidade === 'São Paulo' && f0.uf === 'SP' && f0.cep === '01310-100' && f0.payVisible && /Pagar com (Pix|Mercado Pago) · R\$/.test(f0.pay), JSON.stringify(f0));
+    check(`${vp.tag}: formulário com endereço preenchido pelo CEP`, f0 && /Paulista/.test(f0.rua) && f0.cidade === 'São Paulo' && f0.uf === 'SP' && f0.cep === '01310-100' && f0.payVisible && /Pagar com (Pix|pagamento online) · R\$/.test(f0.pay), JSON.stringify(f0));
     await page.screenshot({ path: `${OUT}/${vp.tag}-16-checkout-formulario.png` });
     const legal = await page.evaluate(() => { const n = document.querySelector('#legalNote'); return { vis: !n.hidden, links: [...n.querySelectorAll('a')].map((a) => a.getAttribute('href')) }; });
     check(`${vp.tag}: aviso "Ao pagar você concorda" com Termos e Privacidade perto do botão`, legal.vis && legal.links.indexOf('termos.html') !== -1 && legal.links.indexOf('privacidade.html') !== -1, JSON.stringify(legal));
@@ -178,7 +178,7 @@ async function go(page, jump) {
     const masks = await page.evaluate(() => ({ cpf: document.querySelector('#co_cpf').value, tel: document.querySelector('#co_telefone').value, errs: document.querySelectorAll('#checkoutForm .f--err').length }));
     check(`${vp.tag}: máscaras de CPF e telefone`, masks.cpf === '529.982.247-25' && masks.tel === '(41) 98888-7777' && masks.errs === 0, JSON.stringify(masks));
     if (vp.tag === 'mobile') {
-      // /checkout REAL: só gera o link do Mercado Pago (não paga)
+      // /checkout REAL: só gera o link do pagamento online (não paga)
       await page.evaluate(() => { window.__noRedirect = true; window.__lastInitPoint = null; });
       const t0 = Date.now();
       await page.click('#checkoutMp');
@@ -186,7 +186,7 @@ async function go(page, jump) {
       const loading = await page.evaluate(() => document.querySelector('#checkoutMp').textContent);
       await page.waitForFunction(() => window.__lastInitPoint || !document.querySelector('#payMsg').hidden, { timeout: 30000 }).catch(() => {});
       const ck = await page.evaluate(() => ({ init: window.__lastInitPoint, msg: document.querySelector('#payMsg').hidden ? '' : document.querySelector('#payMsg').textContent, pedido: JSON.parse(localStorage.getItem('cwb_pedido_v1') || 'null') }));
-      check(`${vp.tag}: /checkout real devolve init_point do Mercado Pago`, ck.init && /^https:\/\/(www\.)?mercadopago\.com\.br\//.test(ck.init) && ck.pedido && /^CWB-/.test(ck.pedido.id), JSON.stringify({ loading, ms: Date.now() - t0, init: ck.init, pedido: ck.pedido && ck.pedido.id, total: ck.pedido && ck.pedido.total, msg: ck.msg }));
+      check(`${vp.tag}: /checkout real devolve init_point do pagamento online`, ck.init && /^https:\/\/(www\.)?pagamento online\.com\.br\//.test(ck.init) && ck.pedido && /^CWB-/.test(ck.pedido.id), JSON.stringify({ loading, ms: Date.now() - t0, init: ck.init, pedido: ck.pedido && ck.pedido.id, total: ck.pedido && ck.pedido.total, msg: ck.msg }));
       results.initPoint = ck.init; results.pedido = ck.pedido;
       if (ck.init) {
         // 1) como o curl: segue os redirects e confere a página de checkout
@@ -194,7 +194,7 @@ async function go(page, jump) {
         const r = await fetch(ck.init, { headers: { 'User-Agent': UA, 'Accept-Language': 'pt-BR,pt;q=0.9' }, redirect: 'follow' });
         const html = await r.text();
         const title = (html.match(/<title>([^<]*)<\/title>/) || [])[1];
-        check(`${vp.tag}: init_point responde 200 "Mercado Pago - Checkout" com o pedido`, r.status === 200 && /Mercado Pago - Checkout/.test(title || '') && html.indexOf(ck.pedido.id) !== -1, `${r.status} ${title} ${r.url.slice(0, 80)}`);
+        check(`${vp.tag}: init_point responde 200 "pagamento online - Checkout" com o pedido`, r.status === 200 && /pagamento online - Checkout/.test(title || '') && html.indexOf(ck.pedido.id) !== -1, `${r.status} ${title} ${r.url.slice(0, 80)}`);
         const mp = await browser.newPage();
         await mp.setUserAgent(UA);
         await mp.setViewport({ width: 390, height: 844, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
@@ -203,9 +203,9 @@ async function go(page, jump) {
         await sleep(1500);
         const mpInfo = await mp.evaluate(() => ({ url: location.href.slice(0, 90), title: document.title, text: document.body.innerText.slice(0, 700).replace(/\s+/g, ' ') })).catch((e) => ({ err: e.message }));
         const st = resp && typeof resp.status === 'function' ? resp.status() : 'nav';
-        check(`${vp.tag}: página do Mercado Pago abre no navegador (sem pagar)`, st !== 403 && /mercadopago\.com\.br/.test(mpInfo.url || '') && /pagar/i.test(mpInfo.text || '') && /Pix/.test(mpInfo.text || ''), st + ' ' + JSON.stringify(mpInfo));
+        check(`${vp.tag}: página do pagamento online abre no navegador (sem pagar)`, st !== 403 && /pagamento online\.com\.br/.test(mpInfo.url || '') && /pagar/i.test(mpInfo.text || '') && /Pix/.test(mpInfo.text || ''), st + ' ' + JSON.stringify(mpInfo));
         results.mpPage = mpInfo;
-        await mp.screenshot({ path: `${OUT}/${vp.tag}-18-mercado-pago.png` });
+        await mp.screenshot({ path: `${OUT}/${vp.tag}-18-checkout-return.png` });
         await mp.close();
       }
     }
@@ -235,13 +235,13 @@ async function go(page, jump) {
     check(`${vp.tag}: CEP inexistente avisa`, /não encontrado/.test(err), err);
     await sleep(300); window_expect400 = false;
     if (vp.tag === 'desktop') {
-      // "Outra cor" não vai pro Mercado Pago (o servidor só aceita as cores da peça)
+      // "Outra cor" não vai pro pagamento online (o servidor só aceita as cores da peça)
       await page.evaluate(() => { CWB.addToCart('YQ-1205', 'M', 'Outra cor (combinar no WhatsApp)', 1); CWB.openCart(1); });
       await page.$eval('#cep_cart', (i) => { i.value = ''; }); await page.type('#cep_cart', '80010000');
       await page.waitForFunction(() => { const f = CWB.frete(); return f.opcoes && !f.busy; }, { timeout: 20000 }).catch(() => {});
       await sleep(300);
       const oc = await page.evaluate(() => ({ msg: document.querySelector('#payMsg').textContent, hidden: document.querySelector('#payMsg').hidden }));
-      check('desktop: item "Outra cor" pede WhatsApp em vez do Mercado Pago', !oc.hidden && /outra cor/.test(oc.msg), JSON.stringify(oc));
+      check('desktop: item "Outra cor" pede WhatsApp em vez do pagamento online', !oc.hidden && /outra cor/.test(oc.msg), JSON.stringify(oc));
     }
     await page.close();
   }

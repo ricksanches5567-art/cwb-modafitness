@@ -6,11 +6,11 @@ https://ricksanches5567-art.github.io/cwb-modafitness/
 ## Configurar (arquivo `config.js`)
 - `whatsappNumber`: número que recebe os pedidos (55 + DDD + número, só números).
 - `apiPagamento`: endereço do servidor da loja (Cloudflare Worker, pasta `cwb-pagamento`), que calcula o
-  frete em tempo real (`POST /frete`, Melhor Envio) e cria o pagamento do Mercado Pago com peças + frete
+  frete em tempo real (`POST /frete`, Melhor Envio) e cria o pagamento do pagamento online com peças + frete
   (`POST /checkout`). O servidor recalcula preços e frete; o site nunca guarda token.
 - `instagram`: usuário do Instagram, sem @.
 
-Nunca coloque token ou senha do Mercado Pago no site.
+Nunca coloque token ou senha do pagamento online no site.
 
 ## Mudar preços
 1. Edite `data/precos.csv` (separado por `;`, preço no formato `74,90`).
@@ -32,20 +32,20 @@ e abra http://localhost:8000
 ## Frete e pagamento
 - Sacola em 2 etapas: (1) peças + CEP → opções reais de entrega (JeT, Jadlog, Correios, Loggi…) com preço e
   prazo, já marcando a mais barata; (2) entrega e pagamento: nome, e-mail, WhatsApp, CPF (obrigatório, com
-  dígito verificador), CEP (preenche rua/bairro/cidade/UF), número e complemento → "Pagar com Mercado Pago"
-  leva para o checkout do Mercado Pago com o frete incluso.
+  dígito verificador), CEP (preenche rua/bairro/cidade/UF), número e complemento → "Pagar com pagamento online"
+  leva para o checkout do pagamento online com o frete incluso.
 - Frete grátis na entrega mais barata a partir de R$ 199,90 (valor vem do servidor; `freteGratisAcima` é a reserva).
-- **Forma de pagamento** (etapa 2): "Pix (5% de desconto)" ou "Cartão (parcelado) ou boleto". No Pix o Mercado Pago abre
+- **Forma de pagamento** (etapa 2): "Pix (5% de desconto)" ou "Cartão (parcelado) ou boleto". No Pix o pagamento online abre
   só com Pix e as peças já com desconto; no cartão/boleto o preço é cheio e o parcelamento continua liberado.
 - **Cupom** (etapa 2): campo "Cupom" + "Aplicar" valida no servidor (`POST /cupom`) com o e-mail e o CPF digitados.
   `BEMVINDA10` = 10% OFF nas peças só na primeira compra (CPF/e-mail sem pedido pago). O servidor confere de novo no
   pagamento. Descontos empilham nas peças (subtotal × 0,90 × 0,95, centavos arredondados a cada etapa); frete sem desconto;
   frete grátis pelo subtotal antes dos descontos. O resumo mostra subtotal, cupom, Pix, frete e total.
 - Aviso da promoção no topo (hero), na faixa animada e em "Como comprar"; regras em `termos.html` (seção 3).
-- Volta do Mercado Pago: `#pedido-ok` (agradece e esvazia a sacola), `#pedido-pendente` (Pix/boleto aguardando),
+- Volta do pagamento online: `#pedido-ok` (agradece e esvazia a sacola), `#pedido-pendente` (Pix/boleto aguardando),
   `#pedido-erro` (tentar de novo). Os parâmetros somem da URL.
 - Se o servidor não responder, a sacola usa `freteTabela` (estimativa por região) e oferece só o WhatsApp.
-- Peças com "Outra cor" vão só pelo WhatsApp (o Mercado Pago aceita apenas as cores cadastradas).
+- Peças com "Outra cor" vão só pelo WhatsApp (o pagamento online aceita apenas as cores cadastradas).
 - O WhatsApp (botão "Prefiro finalizar pelo WhatsApp") leva peças, CEP, entrega escolhida e total.
 - O CPF fica só na sessão do navegador (não é salvo no aparelho).
 

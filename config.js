@@ -2,7 +2,7 @@
    CONFIGURAÇÕES DA LOJA — CWB Moda Fitness
    Edite só os valores entre aspas. Depois de salvar no GitHub, o site
    atualiza sozinho em 1 ou 2 minutos.
-   ⚠️ NUNCA coloque aqui senha, token ou "Access Token" do Mercado Pago:
+   ⚠️ NUNCA coloque aqui senha, token ou "Access Token" do pagamento online:
       este arquivo é público. Use apenas LINKS de pagamento.
    ========================================================================= */
 window.LOJA_CONFIG = {
@@ -20,17 +20,17 @@ window.LOJA_CONFIG = {
   // ----------------------------------------------------------------------
   // PAGAMENTO ONLINE + FRETE EM TEMPO REAL (servidor da loja no Cloudflare)
   // A sacola consulta /frete (Melhor Envio: JeT, Jadlog, Correios, Loggi…)
-  // e o botão "Pagar com Mercado Pago" chama /checkout, que já cobra
+  // e o botão "Pagar com pagamento online" chama /checkout, que já cobra
   // peças + frete juntos. Se o servidor não responder, a sacola usa a
   // tabela de frete abaixo como estimativa e oferece o WhatsApp.
   apiPagamento: "https://cwb-modafitness-pagamento.cwbmodafitness.workers.dev",
 
-  // Links fixos antigos do Mercado Pago (cobravam só a peça, sem frete).
+  // Links fixos antigos do pagamento online (cobravam só a peça, sem frete).
   // NÃO são mais usados pelo site; ficam aqui só como referência:
-  //   49,90 https://mpago.la/1ja811w · 64,90 https://mpago.la/2Dga6aw
-  //   74,90 https://mpago.la/2UxwBdm · 79,90 https://mpago.la/1SLnsd1
-  //   89,90 https://mpago.la/1QhajdQ · 94,90 https://mpago.la/1tE8FAR
-  //   99,90 https://mpago.la/2DKbH4H
+  //   49,90 https:// · 64,90 https://
+  //   74,90 https:// · 79,90 https://
+  //   89,90 https:// · 94,90 https://
+  //   99,90 https://
 
   // ----------------------------------------------------------------------
   // FRETE (estimativa automática pelo CEP — origem: Curitiba-PR, Correios)
